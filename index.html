@@ -1,49 +1,414 @@
-<!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
-<meta name="description" content="GSM HK mobile diagnostics, authorized repair resources and technician support.">
-<title>GSM HK | Mobile Repair & Support</title>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="GSM HK - Mobile repair resources, device diagnostics, official software and technician support.">
+<title>GSM HK | Professional Mobile Repair Portal</title>
+
 <style>
-:root{--bg:#08090d;--panel:#11141a;--gold:#ffb900;--text:#f7f8fb;--muted:#a5afbf;--line:#292d36}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#21190a,transparent 36%),var(--bg);color:var(--text);font:16px/1.6 system-ui,Arial,sans-serif}
-a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}.top{background:#090a0e;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}.top .wrap{display:flex;justify-content:space-between;padding:8px 0;gap:10px;flex-wrap:wrap}
-header{position:sticky;top:0;z-index:5;background:#08090df2;backdrop-filter:blur(12px);border-bottom:1px solid #39301d}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-.brand{font-size:25px;font-weight:900;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand b,.gold{color:var(--gold)}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px}
-nav{display:flex;gap:22px;font-size:14px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px}
-.hero{text-align:center;padding:90px 0 65px}.pill{display:inline-block;border:1px solid #76540f;border-radius:99px;padding:7px 14px;color:var(--gold);background:#151109;font-size:12px;font-weight:850;letter-spacing:.5px}
-h1{font-size:clamp(40px,6vw,68px);line-height:1.1;letter-spacing:-2px;margin:26px 0 15px}h1 span{color:var(--gold)}.lead{max-width:750px;margin:auto;color:var(--muted);font-size:17px}.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:29px}
-.stats,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:linear-gradient(145deg,#14171e,#0e1015);border:1px solid var(--line);border-radius:17px;padding:23px;transition:.2s}.card:hover{border-color:#8b6518;transform:translateY(-3px)}.ico{width:44px;height:44px;border-radius:13px;background:#ffb90018;border:1px solid #76540f;color:var(--gold);display:grid;place-items:center;font-size:21px;margin:0 auto 13px}
-.card h3{margin:0 0 5px;font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px}section{padding:35px 0 60px}.stats{margin-bottom:40px}.head{text-align:center;margin-bottom:26px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:2px;font-weight:900}.head h2{font-size:34px;margin:5px 0}.head p{color:var(--muted);margin:0}.grid{grid-template-columns:repeat(3,1fr)}.service .ico{margin:0 0 15px}.service p{min-height:44px}.link{display:inline-block;color:var(--gold);font-size:13px;font-weight:850;margin-top:14px}
-.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.brandbox{background:#11141a;border:1px solid #30343d;border-radius:12px;text-align:center;padding:18px 7px;font-weight:900}.brandbox:hover{border-color:var(--gold);color:var(--gold)}
-.band{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px;border:1px solid #61470f;border-radius:20px;background:linear-gradient(110deg,#1b160b,#11141a)}.band h2{margin:0 0 5px}.band p{margin:0;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.float{position:fixed;right:18px;bottom:18px;background:#15c96b;color:#03140b;padding:12px 18px;border-radius:99px;font-weight:900;z-index:9;box-shadow:0 8px 25px #15c96b40}
-@media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}}
-</style></head><body>
-<div class="top"><div class="wrap"><span>● <b class="gold">GSM HK</b> | Mobile Repair Resources</span><span>WhatsApp: +91 70186 98655</span></div></div>
-<header><div class="wrap nav"><a class="brand" href="#home"><span class="logo">▦</span><span>GSM <b>HK</b><small>UNLOCK · REPAIR · FIX</small></span></a>
-<nav id="nav"><a href="#home">Overview</a><a href="#services">Services</a><a href="#tools">Tools & Resources</a><a href="#brands">Brands</a><a href="#contact">Support</a></nav>
-<a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20support.">WhatsApp Support ↗</a><button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div></header>
+:root{
+  --bg:#080d18;
+  --panel:#111b2d;
+  --panel2:#0d1524;
+  --blue:#168cff;
+  --cyan:#38d8ff;
+  --gold:#ffbd42;
+  --text:#f4f7ff;
+  --muted:#9eacc2;
+  --line:#25344b;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;background:var(--bg);color:var(--text);
+ font:15px/1.6 Arial,sans-serif;
+}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+.top{
+ background:#060a12;border-bottom:1px solid var(--line);
+ color:var(--muted);font-size:12px;padding:8px 0
+}
+.top .wrap{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+header{
+ position:sticky;top:0;z-index:10;
+ background:#080d18ed;backdrop-filter:blur(14px);
+ border-bottom:1px solid var(--line)
+}
+.nav{
+ min-height:76px;display:flex;align-items:center;
+ justify-content:space-between;gap:18px
+}
+.brand{display:flex;align-items:center;gap:11px;font-weight:900;font-size:25px}
+.logo{
+ width:45px;height:45px;border-radius:13px;
+ display:grid;place-items:center;
+ background:linear-gradient(135deg,#168cff,#074caa);
+ color:white;font-size:22px;
+ box-shadow:0 0 22px #168cff45
+}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted)}
+.brand b{color:var(--cyan)}
+nav{display:flex;gap:21px;font-size:13px;font-weight:bold}
+nav a:hover{color:var(--cyan)}
+.btn{
+ display:inline-block;padding:12px 19px;border-radius:10px;
+ background:linear-gradient(120deg,#168cff,#0870d5);
+ color:white;font-weight:bold;border:1px solid #369bff;
+ transition:.2s
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.15)}
+.btn.alt{background:#121e32;border:1px solid var(--line)}
+.menu{
+ display:none;background:#15233a;color:white;
+ border:1px solid var(--line);padding:9px 13px;border-radius:8px
+}
+.hero{
+ padding:85px 0 70px;text-align:center;
+ background:
+ radial-gradient(ellipse at 50% 10%,#123b6a77,transparent 55%),
+ linear-gradient(180deg,#0b172a,#080d18)
+}
+.pill{
+ display:inline-block;padding:7px 15px;border-radius:50px;
+ background:#10294a;border:1px solid #2265a5;
+ color:var(--cyan);font-size:11px;font-weight:bold;letter-spacing:1px
+}
+h1{
+ font-size:clamp(39px,6vw,68px);
+ line-height:1.1;letter-spacing:-2px;margin:25px 0 15px
+}
+h1 span{color:var(--cyan)}
+.lead{max-width:720px;margin:auto;color:var(--muted);font-size:17px}
+.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+.searchbox{
+ max-width:620px;margin:35px auto 0;
+ display:flex;background:#111c2e;border:1px solid #2a4567;
+ border-radius:13px;padding:6px
+}
+.searchbox input{
+ flex:1;min-width:0;background:transparent;border:0;
+ outline:0;color:white;padding:12px;font-size:15px
+}
+.searchbox button{
+ border:0;border-radius:9px;background:var(--blue);
+ color:white;padding:0 20px;font-weight:bold
+}
+section{padding:55px 0}
+.head{text-align:center;margin-bottom:30px}
+.eyebrow{color:var(--cyan);font-size:11px;font-weight:900;letter-spacing:2px}
+.head h2{font-size:32px;margin:5px 0}
+.head p{color:var(--muted);margin:0}
+.stats,.grid{display:grid;gap:16px}
+.stats{grid-template-columns:repeat(4,1fr);margin-top:35px}
+.grid{grid-template-columns:repeat(3,1fr)}
+.card{
+ background:linear-gradient(145deg,#142139,#0e1728);
+ border:1px solid var(--line);border-radius:16px;
+ padding:23px;transition:.2s
+}
+.card:hover{transform:translateY(-4px);border-color:#2189e8}
+.ico{
+ width:47px;height:47px;border-radius:13px;
+ background:#168cff20;border:1px solid #2465a0;
+ display:grid;place-items:center;font-size:22px;
+ color:var(--cyan);margin-bottom:15px
+}
+.card h3{margin:0 0 7px;font-size:17px}
+.card p{color:var(--muted);font-size:13px;margin:0}
+.stat{text-align:center}
+.stat .ico{margin:0 auto 12px}
+.stat strong{font-size:20px;color:var(--cyan)}
+.service{display:flex;flex-direction:column;align-items:flex-start}
+.service .link{
+ color:var(--cyan);font-size:13px;font-weight:bold;margin-top:17px
+}
+.service .link:hover{color:var(--gold)}
+.brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.brandbox{
+ padding:18px 5px;text-align:center;border:1px solid var(--line);
+ border-radius:12px;background:var(--panel);font-weight:900;
+ font-size:13px;transition:.2s
+}
+.brandbox:hover{border-color:var(--cyan);color:var(--cyan)}
+.band{
+ display:flex;justify-content:space-between;align-items:center;
+ gap:20px;padding:32px;border:1px solid #24578b;
+ border-radius:18px;
+ background:linear-gradient(110deg,#10294a,#101827)
+}
+.band h2{margin:0 0 5px}
+.band p{margin:0;color:var(--muted)}
+.empty{display:none;text-align:center;color:var(--muted);padding:25px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:12px}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.float{
+ position:fixed;right:18px;bottom:18px;z-index:20;
+ background:#17c96b;color:#04150b;padding:13px 19px;
+ border-radius:50px;font-weight:900;box-shadow:0 5px 25px #17c96b45
+}
+@media(max-width:850px){
+ nav{
+ display:none;position:absolute;top:76px;left:0;right:0;
+ padding:20px 5%;background:#0a1220;flex-direction:column
+ }
+ nav.open{display:flex}
+ .menu{display:block}
+ .nav>.btn{display:none}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .brands{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:600px){
+ .hero{padding:60px 0 45px}
+ .grid{grid-template-columns:1fr}
+ .band{align-items:flex-start;flex-direction:column}
+ .head h2{font-size:27px}
+ .searchbox button{padding:0 12px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+ <div class="wrap">
+  <span>● GSM HK | Professional Technician Portal</span>
+  <span>WhatsApp: +91 70186 98655</span>
+ </div>
+</div>
+
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#home">
+   <span class="logo">HK</span>
+   <span>GSM <b>HK</b><small>UNLOCK · REPAIR · SUPPORT</small></span>
+  </a>
+
+  <nav id="nav">
+   <a href="#home">Home</a>
+   <a href="#services">Services</a>
+   <a href="#tools">Tools</a>
+   <a href="#brands">Brands</a>
+   <a href="#contact">Contact</a>
+  </nav>
+
+  <a class="btn" href="https://wa.me/917018698655">WhatsApp ↗</a>
+  <button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
+ </div>
+</header>
+
 <main>
-<section class="hero" id="home"><div class="wrap"><div class="pill">● PROFESSIONAL GSM TECHNICIAN PORTAL</div><h1>Welcome To <span>GSM HK</span></h1><p class="lead">Mobile diagnostics, authorized repair resources, software guidance and practical support for mobile technicians.</p><div class="actions"><a class="btn" href="#tools">Explore Resources →</a><a class="btn alt" href="#contact">Contact Support ↗</a></div></div></section>
-<div class="wrap stats">
-<article class="card" style="text-align:center"><div class="ico">▦</div><h3>Repair Resources</h3><p>Useful references for common mobile repair workflows.</p></article>
-<article class="card" style="text-align:center"><div class="ico">⚙</div><h3>Tool Guidance</h3><p>Information about legitimate diagnostic and service utilities.</p></article>
-<article class="card" style="text-align:center"><div class="ico">⌁</div><h3>Remote Assistance</h3><p>Ask about a supervised support session.</p></article>
-<article class="card" style="text-align:center"><div class="ico">◉</div><h3>Technician Support</h3><p>Contact GSM HK for help and service enquiries.</p></article></div>
-<section id="services"><div class="wrap"><div class="head"><div class="eyebrow">WHAT WE OFFER</div><h2>Services & Support</h2><p>Practical help for phone technicians and device owners.</p></div><div class="grid">
-<article class="card service"><div class="ico">⌕</div><h3>Device Diagnostics</h3><p>Guidance for checking device status, common faults and repair symptoms.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20device%20diagnostics%20support.">Enquire on WhatsApp →</a></article>
-<article class="card service"><div class="ico">⚙</div><h3>Authorized Software Support</h3><p>Help finding official manufacturer software, drivers and update guidance.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20authorized%20software%20support.">Enquire on WhatsApp →</a></article>
-<article class="card service"><div class="ico">▣</div><h3>Remote Technician Help</h3><p>Ask about a supervised remote support appointment for a repair issue.</p><a class="link" href="https://wa.me/917018698655?text=I%20want%20to%20ask%20about%20remote%20technician%20support.">Book an enquiry →</a></article></div></div></section>
-<section id="tools"><div class="wrap"><div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div><div class="grid">
-<article class="card service"><div class="ico">▤</div><h3>USB Drivers</h3><p>Find official USB and device connectivity driver resources.</p><a class="link" href="https://wa.me/917018698655?text=Please%20help%20me%20find%20official%20USB%20drivers.">Request resource →</a></article>
-<article class="card service"><div class="ico">⬇</div><h3>Firmware & Updates</h3><p>Guidance toward manufacturer-provided firmware and update pages.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20official%20firmware%20or%20update%20guidance.">Request guidance →</a></article>
-<article class="card service"><div class="ico">▣</div><h3>Diagnostic Utilities</h3><p>Information about reputable tools for device testing and troubleshooting.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20diagnostic%20utility%20information.">Ask about tools →</a></article></div></div></section>
-<section id="brands"><div class="wrap"><div class="head"><div class="eyebrow">DEVICE ECOSYSTEM</div><h2>Supported Device Brands</h2><p>Choose a brand to visit its official support resources.</p></div><div class="brands">
-<a class="brandbox" href="https://www.samsung.com/in/support/">SAMSUNG</a><a class="brandbox" href="https://www.mi.com/in/service/">XIAOMI</a><a class="brandbox" href="https://support.oppo.com/in/">OPPO</a><a class="brandbox" href="https://www.vivo.com/in/support">vivo</a><a class="brandbox" href="https://www.realme.com/in/support">realme</a><a class="brandbox" href="https://www.motorola.in/support">MOTOROLA</a></div></div></section>
-<section id="contact"><div class="wrap"><div class="band"><div><div class="eyebrow">NEED A HAND?</div><h2>Talk to GSM HK Support</h2><p>Send your device model and a short description of the issue.</p></div><a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20technician%20support.">Chat on WhatsApp ↗</a></div></div></section>
-</main><footer><div class="wrap foot"><span>© <span id="year"></span> GSM HK. All rights reserved.</span><span>Independent repair resource portal. Brand names belong to their respective owners.</span></div></footer>
-<a class="float" href="https://wa.me/917018698655?text=Hello%20GSM%20HK">☏ WhatsApp</a>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));</script>
-</body></html>
+
+<section class="hero" id="home">
+ <div class="wrap">
+  <div class="pill">✦ WELCOME TO GSM HK</div>
+
+  <h1>Professional <span>Mobile Repair</span><br>Resources & Support</h1>
+
+  <p class="lead">
+   Your technician destination for mobile diagnostics,
+   official software resources, device information
+   and professional repair assistance.
+  </p>
+
+  <div class="actions">
+   <a class="btn" href="#tools">Explore Tools →</a>
+   <a class="btn alt" href="#contact">Get Support ↗</a>
+  </div>
+
+  <div class="searchbox">
+   <input id="search" type="search" placeholder="Search tools, services or resources...">
+   <button onclick="searchCards()">Search</button>
+  </div>
+ </div>
+</section>
+
+<div class="wrap">
+ <div class="stats">
+  <article class="card stat">
+   <div class="ico">⚙</div>
+   <strong>Diagnostics</strong>
+   <p>Device troubleshooting</p>
+  </article>
+  <article class="card stat">
+   <div class="ico">▤</div>
+   <strong>Resources</strong>
+   <p>Official software guidance</p>
+  </article>
+  <article class="card stat">
+   <div class="ico">📱</div>
+   <strong>Multi Brand</strong>
+   <p>Popular device brands</p>
+  </article>
+  <article class="card stat">
+   <div class="ico">◉</div>
+   <strong>Technician Help</strong>
+   <p>Support and assistance</p>
+  </article>
+ </div>
+</div>
+
+<section id="services">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">WHAT WE PROVIDE</div>
+   <h2>Our Services</h2>
+   <p>Professional resources for technicians and device owners.</p>
+  </div>
+
+  <div class="grid searchable">
+   <article class="card service">
+    <div class="ico">⌕</div>
+    <h3>Mobile Diagnostics</h3>
+    <p>Get guidance for identifying common device issues and troubleshooting problems.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20mobile%20diagnostic%20support">Learn More →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">⚙</div>
+    <h3>Software Support</h3>
+    <p>Guidance for official manufacturer updates, drivers and software utilities.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20software%20support">Learn More →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">🔧</div>
+    <h3>Repair Assistance</h3>
+    <p>Get assistance with common hardware faults and authorized repair information.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20repair%20assistance">Learn More →</a>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section id="tools">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">TECHNICIAN CORNER</div>
+   <h2>Tools & Resources</h2>
+   <p>Useful resources for everyday mobile repair work.</p>
+  </div>
+
+  <div class="grid searchable">
+
+   <article class="card service">
+    <div class="ico">▤</div>
+    <h3>USB Drivers</h3>
+    <p>Official device connectivity and USB driver information.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20USB%20driver%20information">Request Details →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">⬇</div>
+    <h3>Firmware & Updates</h3>
+    <p>Manufacturer-provided firmware and official update resources.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20firmware%20guidance">Request Details →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">⚙</div>
+    <h3>Diagnostic Utilities</h3>
+    <p>Information about reputable device testing and troubleshooting software.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20diagnostic%20software%20information">Request Details →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">📱</div>
+    <h3>Device Information</h3>
+    <p>Learn about device models, specifications and compatibility.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20device%20information">Request Details →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">🔌</div>
+    <h3>Connectivity Help</h3>
+    <p>Guidance for common USB and device connection issues.</p>
+    <a class="link" href="https://wa.me/917018698655?text=I%20need%20connectivity%20help">Request Details →</a>
+   </article>
+
+   <article class="card service">
+    <div class="ico">💻</div>
+    <h3>Technician Support</h3>
+    <p>Contact GSM HK for general repair and technical enquiries.</p>
+    <a class="link" href="https://wa.me/917018698655?text=Hello%20GSM%20HK">Contact Us →</a>
+   </article>
+
+  </div>
+  <div class="empty" id="empty">No matching resources found. Try another search.</div>
+ </div>
+</section>
+
+<section id="brands">
+ <div class="wrap">
+  <div class="head">
+   <div class="eyebrow">DEVICE ECOSYSTEM</div>
+   <h2>Mobile Brands</h2>
+   <p>Visit official manufacturer support websites.</p>
+  </div>
+
+  <div class="brands">
+   <a class="brandbox" href="https://www.samsung.com/in/support/">SAMSUNG ↗</a>
+   <a class="brandbox" href="https://www.mi.com/in/service/">XIAOMI ↗</a>
+   <a class="brandbox" href="https://support.oppo.com/in/">OPPO ↗</a>
+   <a class="brandbox" href="https://www.vivo.com/in/support">VIVO ↗</a>
+   <a class="brandbox" href="https://www.realme.com/in/support">REALME ↗</a>
+   <a class="brandbox" href="https://www.motorola.in/support">MOTOROLA ↗</a>
+  </div>
+ </div>
+</section>
+
+<section id="contact">
+ <div class="wrap">
+  <div class="band">
+   <div>
+    <div class="eyebrow">WE ARE HERE TO HELP</div>
+    <h2>Need Technical Support?</h2>
+    <p>Contact GSM HK for enquiries and repair assistance.</p>
+   </div>
+   <a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20support.">Chat on WhatsApp ↗</a>
+  </div>
+ </div>
+</section>
+
+</main>
+
+<footer>
+ <div class="wrap foot">
+  <span>© <span id="year"></span> GSM HK. All rights reserved.</span>
+  <span>Independent mobile repair resource portal.</span>
+ </div>
+</footer>
+
+<a class="float" href="https://wa.me/917018698655">☏ WhatsApp</a>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+
+document.querySelectorAll("nav a").forEach(a=>{
+ a.addEventListener("click",()=>{
+  document.getElementById("nav").classList.remove("open");
+ });
+});
+
+function searchCards(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ const cards=document.querySelectorAll(".searchable .card");
+ let visible=0;
+
+ cards.forEach(card=>{
+  const match=card.innerText.toLowerCase().includes(q);
+  card.style.display=match?"flex":"none";
+  if(match)visible++;
+ });
+
+ document.getElementById("empty").style.display=visible?"none":"block";
+}
+
+document.getElementById("search").addEventListener("input",searchCards);
+</script>
+
+</body>
+</html>
