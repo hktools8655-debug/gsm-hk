@@ -1,16 +1,20 @@
-!doctype html>
+<!doctype html>
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#08090d">
 <meta name="description" content="GSM HK mobile diagnostics, authorized repair resources and technician support.">
 <title>GSM HK | Mobile Repair & Support</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>▦</text></svg>">
+<meta property="og:title" content="GSM HK | Mobile Repair & Support">
+<meta property="og:description" content="GSM tools, credits, licenses and repair resources.">
+<meta property="og:type" content="website">
 <style>
 :root{--bg:#08090d;--panel:#11141a;--gold:#ffb900;--text:#f7f8fb;--muted:#a5afbf;--line:#292d36}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 50% 0%,#21190a,transparent 36%),var(--bg);color:var(--text);font:16px/1.6 system-ui,Arial,sans-serif}
 a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}.top{background:#090a0e;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}.top .wrap{display:flex;justify-content:space-between;padding:8px 0;gap:10px;flex-wrap:wrap}
 header{position:sticky;top:0;z-index:5;background:#08090df2;backdrop-filter:blur(12px);border-bottom:1px solid #39301d}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font-size:25px;font-weight:900;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand b,.gold{color:var(--gold)}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}.logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px}
-nav{display:flex;gap:22px;font-size:14px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px}
+nav{display:flex;gap:22px;font-size:14px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
 .hero{text-align:center;padding:90px 0 65px}.pill{display:inline-block;border:1px solid #76540f;border-radius:99px;padding:7px 14px;color:var(--gold);background:#151109;font-size:12px;font-weight:850;letter-spacing:.5px}
 h1{font-size:clamp(40px,6vw,68px);line-height:1.1;letter-spacing:-2px;margin:26px 0 15px}h1 span{color:var(--gold)}.lead{max-width:750px;margin:auto;color:var(--muted);font-size:17px}.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:29px}
 .stats,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:linear-gradient(145deg,#14171e,#0e1015);border:1px solid var(--line);border-radius:17px;padding:23px;transition:.2s}.card:hover{border-color:#8b6518;transform:translateY(-3px)}.ico{width:44px;height:44px;border-radius:13px;background:#ffb90018;border:1px solid #76540f;color:var(--gold);display:grid;place-items:center;font-size:21px;margin:0 auto 13px}
@@ -18,15 +22,49 @@ h1{font-size:clamp(40px,6vw,68px);line-height:1.1;letter-spacing:-2px;margin:26p
 .brands{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}.brandbox{background:#11141a;border:1px solid #30343d;border-radius:12px;text-align:center;padding:18px 7px;font-weight:900}.brandbox:hover{border-color:var(--gold);color:var(--gold)}
 .band{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:30px;border:1px solid #61470f;border-radius:20px;background:linear-gradient(110deg,#1b160b,#11141a)}.band h2{margin:0 0 5px}.band p{margin:0;color:var(--muted)}
 footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-size:12px}.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}.float{position:fixed;right:18px;bottom:18px;background:#15c96b;color:#03140b;padding:12px 18px;border-radius:99px;font-weight:900;z-index:9;box-shadow:0 8px 25px #15c96b40}
-@media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}}
+
+/* ===== NEW FEATURES (same theme) ===== */
+.trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:32px}
+.trust span{background:#11141a;border:1px solid var(--line);padding:8px 14px;border-radius:99px;font-size:12px;color:var(--muted)}
+.trust b{color:var(--gold)}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;justify-content:center}
+.toolbar input,.toolbar select{padding:12px 16px;border-radius:13px;border:1px solid var(--line);background:#11141a;color:var(--text);font-size:14px;font-family:inherit;min-width:220px}
+.toolbar input:focus,.toolbar select:focus{outline:none;border-color:var(--gold)}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
+.tool-card{background:linear-gradient(145deg,#14171e,#0e1015);border:1px solid var(--line);border-radius:17px;padding:22px;transition:.2s;display:flex;flex-direction:column}
+.tool-card:hover{border-color:#8b6518;transform:translateY(-3px)}
+.tool-card .cat{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:1px;margin-bottom:8px}
+.tool-card h3{margin:0 0 6px;font-size:17px}
+.tool-card p{margin:0 0 14px;color:var(--muted);font-size:13px;flex-grow:1}
+.tool-card .price{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:12px}
+.tool-card .price small{color:var(--muted);font-weight:400;font-size:11px}
+.tool-card .btn{width:100%;text-align:center;padding:10px}
+.no-results{text-align:center;color:var(--muted);padding:30px;grid-column:1/-1;display:none}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.step{background:#11141a;border:1px solid var(--line);border-radius:17px;padding:22px;text-align:center}
+.step .num{width:38px;height:38px;border-radius:50%;background:var(--gold);color:#08090d;font-weight:900;display:grid;place-items:center;margin:0 auto 12px}
+.step h4{margin:0 0 4px;font-size:15px}
+.step p{margin:0;color:var(--muted);font-size:12px}
+.faq{max-width:800px;margin:auto}
+.faq details{background:#11141a;border:1px solid var(--line);border-radius:15px;margin-bottom:12px;padding:0 18px}
+.faq details[open]{border-color:#8b6518}
+.faq summary{cursor:pointer;padding:16px 0;font-weight:800;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold);font-size:20px;font-weight:900}
+.faq details[open] summary::after{content:"−"}
+.faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
+
+@media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}}
 </style></head><body>
 <div class="top"><div class="wrap"><span>● <b class="gold">GSM HK</b> | Mobile Repair Resources</span><span>WhatsApp: +91 70186 98655</span></div></div>
 <header><div class="wrap nav"><a class="brand" href="#home"><span class="logo">▦</span><span>GSM <b>HK</b><small>UNLOCK · REPAIR · FIX</small></span></a>
 <nav id="nav"><a href="#home">Overview</a><a href="#services">Services</a><a href="#tools">Tools & Resources</a><a href="#brands">Brands</a><a href="#contact">Support</a></nav>
-<a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20support.">WhatsApp Support ↗</a><button class="menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div></header>
+<a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20support.">WhatsApp Support ↗</a><button class="menu" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button></div></header>
 <main>
-<section class="hero" id="home"><div class="wrap"><div class="pill">● PROFESSIONAL GSM TECHNICIAN PORTAL</div><h1>Welcome To <span>GSM HK</span></h1><p class="lead">Mobile diagnostics, authorized repair resources, software guidance and practical support for mobile technicians.</p><div class="actions"><a class="btn" href="#tools">Explore Resources →</a><a class="btn alt" href="#contact">Contact Support ↗</a></div></div></section>
+<section class="hero" id="home"><div class="wrap"><div class="pill">● PROFESSIONAL GSM TECHNICIAN PORTAL</div><h1>Welcome To <span>GSM HK</span></h1><p class="lead">Mobile diagnostics, authorized repair resources, software guidance and practical support for mobile technicians.</p><div class="actions"><a class="btn" href="#tools">Explore Resources →</a><a class="btn alt" href="#contact">Contact Support ↗</a></div>
+<div class="trust"><span>✔ <b>Genuine</b> Licenses</span><span>⚡ <b>Instant</b> Delivery</span><span>🛠 <b>24/7</b> Support</span><span>🔒 <b>Secure</b> Payment</span></div>
+</div></section>
 <div class="wrap stats">
 <article class="card" style="text-align:center"><div class="ico">▦</div><h3>Repair Resources</h3><p>Useful references for common mobile repair workflows.</p></article>
 <article class="card" style="text-align:center"><div class="ico">⚙</div><h3>Tool Guidance</h3><p>Information about legitimate diagnostic and service utilities.</p></article>
@@ -36,14 +74,85 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <article class="card service"><div class="ico">⌕</div><h3>Device Diagnostics</h3><p>Guidance for checking device status, common faults and repair symptoms.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20device%20diagnostics%20support.">Enquire on WhatsApp →</a></article>
 <article class="card service"><div class="ico">⚙</div><h3>Authorized Software Support</h3><p>Help finding official manufacturer software, drivers and update guidance.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20authorized%20software%20support.">Enquire on WhatsApp →</a></article>
 <article class="card service"><div class="ico">▣</div><h3>Remote Technician Help</h3><p>Ask about a supervised remote support appointment for a repair issue.</p><a class="link" href="https://wa.me/917018698655?text=I%20want%20to%20ask%20about%20remote%20technician%20support.">Book an enquiry →</a></article></div></div></section>
-<section id="tools"><div class="wrap"><div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div><div class="grid">
-<article class="card service"><div class="ico">▤</div><h3>USB Drivers</h3><p>Find official USB and device connectivity driver resources.</p><a class="link" href="https://wa.me/917018698655?text=Please%20help%20me%20find%20official%20USB%20drivers.">Request resource →</a></article>
-<article class="card service"><div class="ico">⬇</div><h3>Firmware & Updates</h3><p>Guidance toward manufacturer-provided firmware and update pages.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20official%20firmware%20or%20update%20guidance.">Request guidance →</a></article>
-<article class="card service"><div class="ico">▣</div><h3>Diagnostic Utilities</h3><p>Information about reputable tools for device testing and troubleshooting.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20diagnostic%20utility%20information.">Ask about tools →</a></article></div></div></section>
+
+<!-- ===== NEW: TOOLS & LICENSES (with search + filter) ===== -->
+<section id="tools"><div class="wrap">
+<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div>
+<div class="toolbar">
+<input type="text" id="searchInput" placeholder="🔍 Search tool (e.g. Chimera, UnlockTool...)">
+<select id="catFilter">
+<option value="">All Categories</option>
+<option value="Unlock Tool">Unlock Tool</option>
+<option value="FRP Tool">FRP Tool</option>
+<option value="Box & Dongle">Box & Dongle</option>
+<option value="Credits">Credits</option>
+<option value="Auth Service">Auth Service</option>
+</select>
+</div>
+<div class="tools-grid" id="toolsGrid"></div>
+<div class="no-results" id="noResults">Koi tool nahi mila. Doosra naam try karein.</div>
+</div></section>
+
+<!-- ===== NEW: HOW IT WORKS ===== -->
+<section id="how"><div class="wrap">
+<div class="head"><div class="eyebrow">SIMPLE PROCESS</div><h2>How It Works</h2><p>Sirf 4 steps mein tool activate karein.</p></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><h4>Choose Tool</h4><p>List se apna tool select karein.</p></div>
+<div class="step"><div class="num">2</div><h4>WhatsApp Order</h4><p>Enquire button dabayein, details bhejein.</p></div>
+<div class="step"><div class="num">3</div><h4>Make Payment</h4><p>Secure payment (UPI/Bank) karein.</p></div>
+<div class="step"><div class="num">4</div><h4>Get Activated</h4><p>Instant license/credits receive karein.</p></div>
+</div>
+</div></section>
+
+<!-- ===== NEW: FAQ ===== -->
+<section id="faq"><div class="wrap">
+<div class="head"><div class="eyebrow">QUESTIONS</div><h2>Frequently Asked</h2><p>Aapke sawaalon ke jawab.</p></div>
+<div class="faq">
+<details><summary>License kaise activate hoti hai?</summary><p>Payment confirm hone ke baad hum aapko activation details WhatsApp par bhej dete hain. Zyadatar tools instant activate ho jaate hain.</p></details>
+<details><summary>Credits kya hote hain?</summary><p>Credits ek prepaid balance hote hain jo specific operations (FRP, IMEI repair, flashing) ke liye use hote hain. Har operation ka apna credit cost hota hai.</p></details>
+<details><summary>Delivery time kitna hai?</summary><p>Normal working hours mein 5-30 minute. Late night orders next morning process hote hain.</p></details>
+<details><summary>Refund policy kya hai?</summary><p>Activated licenses/credits non-refundable hote hain. Galat delivery ya technical issue par full support diya jaata hai.</p></details>
+<details><summary>Kya main genuine reseller hoon?</summary><p>GSM HK authorized distributor channels ke through tools provide karta hai. Original invoice/receipt provide ki jaati hai.</p></details>
+</div>
+</div></section>
+
 <section id="brands"><div class="wrap"><div class="head"><div class="eyebrow">DEVICE ECOSYSTEM</div><h2>Supported Device Brands</h2><p>Choose a brand to visit its official support resources.</p></div><div class="brands">
 <a class="brandbox" href="https://www.samsung.com/in/support/">SAMSUNG</a><a class="brandbox" href="https://www.mi.com/in/service/">XIAOMI</a><a class="brandbox" href="https://support.oppo.com/in/">OPPO</a><a class="brandbox" href="https://www.vivo.com/in/support">vivo</a><a class="brandbox" href="https://www.realme.com/in/support">realme</a><a class="brandbox" href="https://www.motorola.in/support">MOTOROLA</a></div></div></section>
 <section id="contact"><div class="wrap"><div class="band"><div><div class="eyebrow">NEED A HAND?</div><h2>Talk to GSM HK Support</h2><p>Send your device model and a short description of the issue.</p></div><a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20technician%20support.">Chat on WhatsApp ↗</a></div></div></section>
 </main><footer><div class="wrap foot"><span>© <span id="year"></span> GSM HK. All rights reserved.</span><span>Independent repair resource portal. Brand names belong to their respective owners.</span></div></footer>
 <a class="float" href="https://wa.me/917018698655?text=Hello%20GSM%20HK">☏ WhatsApp</a>
-<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('nav a').forEach(a=>a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open')));</script>
+<script>
+/* ===== TOOLS DATA (yahan apne tools + prices daalein) ===== */
+const TOOLS = [
+{name:"UnlockTool",cat:"Unlock Tool",desc:"FRP, flashing, unlocking for all major brands.",price:"₹2,499",dur:"3 months"},
+{name:"ChimeraTool",cat:"Unlock Tool",desc:"Samsung, Huawei, MTK, Qualcomm support.",price:"₹8,999",dur:"1 year"},
+{name:"TSM Tool Pro",cat:"FRP Tool",desc:"Samsung FRP, MDM, IMEI and more.",price:"₹1,999",dur:"6 months"},
+{name:"DFT Pro",cat:"Unlock Tool",desc:"Qualcomm/MTK flashing and repair.",price:"₹3,999",dur:"1 year"},
+{name:"Hydra Tool",cat:"Box & Dongle",desc:"Multi-brand flashing & FRP solution.",price:"₹4,499",dur:"1 year"},
+{name:"TFM Tool Pro",cat:"FRP Tool",desc:"Samsung FRP & unlock utility.",price:"₹4,199",dur:"2 years"},
+{name:"Phoenix Service Tool",cat:"Credits",desc:"Samsung credit-based FRP/flash.",price:"₹500",dur:"25 credits"},
+{name:"Pandora Digital",cat:"Box & Dongle",desc:"1 year license, no box needed.",price:"₹6,999",dur:"1 year"},
+{name:"Griffin Tool",cat:"Unlock Tool",desc:"3/6/12 month activation available.",price:"₹1,499",dur:"3 months"},
+{name:"Borneo Schematics",cat:"Auth Service",desc:"Schematic diagrams for repair.",price:"₹2,700",dur:"1 year"},
+{name:"Xiaomi Auth",cat:"Auth Service",desc:"Worldwide auth + FRP service.",price:"₹300",dur:"Per use"},
+{name:"Moto King Pro",cat:"FRP Tool",desc:"Motorola FRP & unlock tool.",price:"₹1,299",dur:"1 year"},
+{name:"MDM Fix Tool",cat:"FRP Tool",desc:"MDM bypass & FRP solution.",price:"₹999",dur:"1 year"},
+{name:"SAM-FRP",cat:"FRP Tool",desc:"Samsung FRP unlock utility.",price:"₹799",dur:"6 months"},
+{name:"Global Unlocker Pro",cat:"Unlock Tool",desc:"Multi-brand unlock support.",price:"₹1,899",dur:"1 year"},
+{name:"The Magic Tool",cat:"Unlock Tool",desc:"All-in-one repair tool.",price:"₹2,199",dur:"1 year"}
+];
+const grid=document.getElementById("toolsGrid"),noResults=document.getElementById("noResults");
+function renderTools(list){
+if(list.length===0){grid.innerHTML="";noResults.style.display="block";return}
+noResults.style.display="none";
+grid.innerHTML=list.map(t=>`<article class="tool-card"><div class="cat">${t.cat}</div><h3>${t.name}</h3><p>${t.desc}</p><div class="price">${t.price} <small>/ ${t.dur}</small></div><a class="btn" target="_blank" rel="noopener" href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want '+t.name+' ('+t.dur+') - Price: '+t.price)}">Enquire on WhatsApp ↗</a></article>`).join("");
+}
+const searchInput=document.getElementById("searchInput"),catFilter=document.getElementById("catFilter");
+function applyFilter(){const q=searchInput.value.toLowerCase().trim(),cat=catFilter.value;const filtered=TOOLS.filter(t=>{const ms=t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);const mc=!cat||t.cat===cat;return ms&&mc});renderTools(filtered)}
+searchInput.addEventListener("input",applyFilter);catFilter.addEventListener("change",applyFilter);
+renderTools(TOOLS);
+document.getElementById("year").textContent=new Date().getFullYear();
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+document.addEventListener("click",(e)=>{const nav=document.getElementById("nav"),menuBtn=document.querySelector(".menu");if(nav.classList.contains("open")&&!nav.contains(e.target)&&!menuBtn.contains(e.target)){nav.classList.remove("open")}});
+</script>
 </body></html>
