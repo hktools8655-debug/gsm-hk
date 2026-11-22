@@ -14,14 +14,12 @@ header{position:sticky;top:0;z-index:50;background:#08090df2;backdrop-filter:blu
 .logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px;overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:cover}
 
-/* NAVIGATION & DROPDOWN FIXED */
+/* NAVIGATION & DROPDOWN */
 nav{display:flex;gap:26px;font-size:17px;font-weight:700;color:#d4d8e0; align-items:center;}
 nav a:hover{color:var(--gold)}
 .dropdown { position: relative; display: inline-block; }
 .dropdown-content { display: none; position: absolute; background-color: #11141a; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 100; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; top: 100%; left: 0; padding: 8px 0; margin-top: 0; }
-/* Padding hack to keep hover active while moving mouse */
 .dropdown-content::before { content: ""; position: absolute; top: -20px; left: 0; width: 100%; height: 20px; }
-/* Hover par aur .show class hone par dropdown dikhega */
 .dropdown:hover .dropdown-content, .dropdown-content.show { display: block; }
 .dropdown-content a { color: #d4d8e0; padding: 12px 20px; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; transition: 0.2s; cursor: pointer; }
 .dropdown-content a:hover { background-color: #1b1f27; color: var(--gold); }
@@ -118,7 +116,6 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
     
     <!-- DROPDOWN MENU -->
     <div class="dropdown">
-      <!-- onclick adds 'show' class to keep it open, removes on clicking outside -->
       <a href="javascript:void(0)" onclick="toggleDropdown(event)" style="display:flex; align-items:center; gap:5px;">Service List <span style="font-size:10px;">▼</span></a>
       <div class="dropdown-content" id="myDropdown">
         <a onclick="openServicePage('Rent Tool')">🔧 Tool Rent</a>
@@ -146,13 +143,11 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Activation')"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
 <article class="card" style="text-align:center"><div class="ico">◉</div><h3>Technician Support</h3><p>Contact GSM HK for help and service enquiries.</p></article></div>
 
-<section id="services"><div class="wrap"><div class="head"><div class="eyebrow">WHAT WE OFFER</div><h2>Services & Support</h2><p>Practical help for phone technicians and device owners.</p></div><div class="grid">
-<article class="card service"><div class="ico">⌕</div><h3>Device Diagnostics</h3><p>Guidance for checking device status, common faults and repair symptoms.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20device%20diagnostics%20support.">Enquire on WhatsApp →</a></article>
-<article class="card service"><div class="ico">⚙</div><h3>Authorized Software Support</h3><p>Help finding official manufacturer software, drivers and update guidance.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20authorized%20software%20support.">Enquire on WhatsApp →</a></article>
-<article class="card service"><div class="ico">▣</div><h3>Remote Technician Help</h3><p>Ask about a supervised remote support appointment for a repair issue.</p><a class="link" href="https://wa.me/917018698655?text=I%20want%20to%20ask%20about%20remote%20technician%20support.">Book an enquiry →</a></article></div></div></section>
+<!-- SERVICES SECTION REMOVED -->
 
 <section id="tools"><div class="wrap">
-<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div>
+<!-- Yahan Running Tools kar diya hai -->
+<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Running Tools</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div>
 <div class="toolbar">
 <input type="text" id="searchInput" placeholder="🔍 Search tool (e.g. Chimera, UnlockTool...)">
 <select id="catFilter">
@@ -263,7 +258,6 @@ function toggleDropdown(event) {
   document.getElementById("myDropdown").classList.toggle("show");
 }
 
-// Close the dropdown if the user clicks outside of it
 window.onclick = function(event) {
   if (!event.target.matches('.dropdown a')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -284,7 +278,6 @@ const serviceNoResults = document.getElementById("serviceNoResults");
 let currentCategory = "";
 
 function openServicePage(category){
-  // Close dropdown when clicked
   document.getElementById("myDropdown").classList.remove("show");
 
   currentCategory = category;
