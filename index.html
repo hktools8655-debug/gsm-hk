@@ -14,14 +14,16 @@ header{position:sticky;top:0;z-index:50;background:#08090df2;backdrop-filter:blu
 .logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px;overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:cover}
 
-/* NAVIGATION & DROPDOWN */
+/* NAVIGATION & DROPDOWN FIXED */
 nav{display:flex;gap:26px;font-size:17px;font-weight:700;color:#d4d8e0; align-items:center;}
 nav a:hover{color:var(--gold)}
 .dropdown { position: relative; display: inline-block; }
-.dropdown-content { display: none; position: absolute; background-color: #11141a; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 100; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; top: 100%; padding: 8px 0; margin-top: 10px; }
-.dropdown-content::before { content: ""; position: absolute; top: -10px; left: 0; width: 100%; height: 10px; } /* Hover gap fix */
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown-content a { color: #d4d8e0; padding: 12px 20px; text-decoration: none; display: block; font-size: 15px; font-weight: 600; transition: 0.2s; cursor: pointer; }
+.dropdown-content { display: none; position: absolute; background-color: #11141a; min-width: 220px; box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.5); z-index: 100; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; top: 100%; left: 0; padding: 8px 0; margin-top: 0; }
+/* Padding hack to keep hover active while moving mouse */
+.dropdown-content::before { content: ""; position: absolute; top: -20px; left: 0; width: 100%; height: 20px; }
+/* Hover par aur .show class hone par dropdown dikhega */
+.dropdown:hover .dropdown-content, .dropdown-content.show { display: block; }
+.dropdown-content a { color: #d4d8e0; padding: 12px 20px; text-decoration: none; display: flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; transition: 0.2s; cursor: pointer; }
 .dropdown-content a:hover { background-color: #1b1f27; color: var(--gold); }
 
 .btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
@@ -116,8 +118,9 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
     
     <!-- DROPDOWN MENU -->
     <div class="dropdown">
-      <a href="#services" style="display:flex; align-items:center; gap:5px;">Service List <span style="font-size:10px;">▼</span></a>
-      <div class="dropdown-content">
+      <!-- onclick adds 'show' class to keep it open, removes on clicking outside -->
+      <a href="javascript:void(0)" onclick="toggleDropdown(event)" style="display:flex; align-items:center; gap:5px;">Service List <span style="font-size:10px;">▼</span></a>
+      <div class="dropdown-content" id="myDropdown">
         <a onclick="openServicePage('Rent Tool')">🔧 Tool Rent</a>
         <a onclick="openServicePage('Credit')">💰 Tools Credit</a>
         <a onclick="openServicePage('Activation')">🔑 Tools Activation</a>
@@ -254,6 +257,25 @@ function renderTools(list, targetGrid = grid){
   </a>`).join("");
 }
 
+/* ===== DROPDOWN CLICK LOGIC ===== */
+function toggleDropdown(event) {
+  event.preventDefault();
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown a')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    for (var i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+
 /* ===== SERVICE PAGE LOGIC (Rent, Credit, Activation) ===== */
 const servicePage = document.getElementById("servicePage");
 const serviceGrid = document.getElementById("serviceGrid");
@@ -262,6 +284,9 @@ const serviceNoResults = document.getElementById("serviceNoResults");
 let currentCategory = "";
 
 function openServicePage(category){
+  // Close dropdown when clicked
+  document.getElementById("myDropdown").classList.remove("show");
+
   currentCategory = category;
   servicePage.style.display = "block";
   document.body.style.overflow = "hidden";
@@ -339,6 +364,5 @@ catFilter.addEventListener("change",applyFilter);
 renderTools(TOOLS);
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
-document.addEventListener("click",(e)=>{const nav=document.getElementById("nav"),menuBtn=document.querySelector(".menu");if(nav.classList.contains("open")&&!nav.contains(e.target)&&!menuBtn.contains(e.target)){nav.classList.remove("open")}});
 </script>
 </body></html>
