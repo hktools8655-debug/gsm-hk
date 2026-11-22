@@ -13,7 +13,11 @@ header{position:sticky;top:0;z-index:5;background:#08090df2;backdrop-filter:blur
 .brand{font-size:25px;font-weight:900;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand b,.gold{color:var(--gold)}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
 .logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px;overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:cover}
-nav{display:flex;gap:22px;font-size:14px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
+
+/* NAVIGATION - SIZE INCREASED BY 20% */
+nav{display:flex;gap:26px;font-size:17px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}
+
+.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
 .hero{text-align:center;padding:90px 0 65px}.pill{display:inline-block;border:1px solid #76540f;border-radius:99px;padding:7px 14px;color:var(--gold);background:#151109;font-size:12px;font-weight:850;letter-spacing:.5px}
 h1{font-size:clamp(40px,6vw,68px);line-height:1.1;letter-spacing:-2px;margin:26px 0 15px}h1 span{color:var(--gold)}.lead{max-width:750px;margin:auto;color:var(--muted);font-size:17px}.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:29px}
 .stats,.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.card{background:linear-gradient(145deg,#14171e,#0e1015);border:1px solid var(--line);border-radius:17px;padding:23px;transition:.2s}.card:hover{border-color:#8b6518;transform:translateY(-3px)}.ico{width:44px;height:44px;border-radius:13px;background:#ffb90018;border:1px solid #76540f;color:var(--gold);display:grid;place-items:center;font-size:21px;margin:0 auto 13px}
@@ -96,9 +100,17 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <header><div class="wrap nav">
   <a class="brand" href="#home">
     <span class="logo"><img src="YAHAN_LOGO_LINK_DALE" alt="GSM HK Logo"></span>
-    <span>GSM <b>HK</b><small>UNLOCK · REPAIR · FIX</small></span>
+    <!-- Yahan Rupee Symbol Add Kar Diya Hai -->
+    <span>GSM <b>HK</b> <span style="color:var(--gold); font-size:22px; margin-left:4px;">₹</span><small>UNLOCK · REPAIR · FIX</small></span>
   </a>
-  <nav id="nav"><a href="#home">Overview</a><a href="#services">Services</a><a href="#tools">Tools & Resources</a><a href="#brands">Brands</a><a href="#contact">Support</a></nav>
+  <!-- Nav Items Updated -->
+  <nav id="nav">
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#tools">Auto Add Fund</a>
+    <a href="#brands">Brands</a>
+    <a href="#contact">DISTRIBUTOR</a>
+  </nav>
   <a class="btn" href="https://wa.me/917018698655?text=Hello%20GSM%20HK%2C%20I%20need%20support.">WhatsApp Support ↗</a>
   <button class="menu" aria-label="Toggle menu" onclick="document.getElementById('nav').classList.toggle('open')">☰</button>
 </div></header>
@@ -109,7 +121,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 </div></section>
 
 <div class="wrap stats">
-<!-- TEENO CLICKABLE HO GAYE HAIN -->
+<!-- CLICK EVENTS -->
 <article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Rent Tool')"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
 <article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Credit')"><div class="ico">⚙</div><h3>Tools Credit</h3><p>Buy credits for various unlocking and repair tools.</p></article>
 <article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Activation')"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
@@ -189,20 +201,19 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 
 <script>
 /* ===== TOOLS DATA ===== */
-/* Yahan maine category set kar di hai. Aapko bas naye tools add karne hain aur unki cat likhni hai (Rent Tool, Credit, ya Activation) */
 const TOOLS = [
   /* --- RENT TOOLS --- */
-  {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"224.4 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"₹142.8", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"₹30.6", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"₹224.4", img:"YAHAN_IMAGE_LINK_DALE"},
   
   /* --- CREDIT TOOLS --- */
-  {name:"Phoenix Service Tool Credits", cat:"Credit", desc:"25 Credits for Samsung FRP", price:"500 INR", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"TSM Tool Credits", cat:"Credit", desc:"10 Credits for various unlocks", price:"300 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Phoenix Service Tool Credits", cat:"Credit", desc:"25 Credits for Samsung FRP", price:"₹500", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"TSM Tool Credits", cat:"Credit", desc:"10 Credits for various unlocks", price:"₹300", img:"YAHAN_IMAGE_LINK_DALE"},
   
   /* --- ACTIVATION TOOLS --- */
-  {name:"UnlockTool Activation", cat:"Activation", desc:"3 Months License Activation", price:"2499 INR", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"ChimeraTool Activation", cat:"Activation", desc:"1 Year License Activation", price:"8999 INR", img:"YAHAN_IMAGE_LINK_DALE"}
+  {name:"UnlockTool Activation", cat:"Activation", desc:"3 Months License Activation", price:"₹2499", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"ChimeraTool Activation", cat:"Activation", desc:"1 Year License Activation", price:"₹8999", img:"YAHAN_IMAGE_LINK_DALE"}
 ];
 
 /* ===== RENDER MAIN PAGE TOOLS ===== */
@@ -237,9 +248,8 @@ let currentCategory = "";
 function openServicePage(category){
   currentCategory = category;
   servicePage.style.display = "block";
-  document.body.style.overflow = "hidden"; // Scroll band
+  document.body.style.overflow = "hidden";
   
-  // Title update karein
   const titleMap = {
     "Rent Tool": "⚡ Tools Rent Store",
     "Credit": "💰 Tools Credit Store",
@@ -247,7 +257,6 @@ function openServicePage(category){
   };
   document.getElementById("servicePageTitle").innerText = titleMap[category] || "⚡ Tools Store";
 
-  // Loading effect
   serviceLoader.style.display = "block";
   serviceGrid.innerHTML = "";
   serviceNoResults.style.display = "none";
@@ -296,7 +305,6 @@ function filterServiceTools(){
   );
   renderServiceTools(filtered);
 }
-
 
 /* ===== MAIN PAGE FILTER ===== */
 const searchInput=document.getElementById("searchInput"),catFilter=document.getElementById("catFilter");
