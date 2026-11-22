@@ -55,20 +55,37 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .faq details[open] summary::after{content:"−"}
 .faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
 
-/* MODAL POPUP CSS */
-.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);backdrop-filter:blur(5px);z-index:9999;justify-content:center;align-items:center;padding:20px}
-.modal-overlay.active{display:flex}
-.modal-content{background:#11141a;border:1px solid var(--line);border-radius:20px;width:100%;max-width:1100px;max-height:90vh;display:flex;flex-direction:column;box-shadow:0 20px 50px rgba(0,0,0,0.8);overflow:hidden}
-.modal-header{display:flex;justify-content:space-between;align-items:center;padding:20px 25px;border-bottom:1px solid var(--line);background:#0b0d12}
-.modal-header h2{margin:0;font-size:20px;color:var(--gold)}
-.close-btn{background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;transition:0.2s}
-.close-btn:hover{color:var(--gold);transform:scale(1.1)}
-.modal-body{padding:25px;overflow-y:auto;}
-.modal-body .tools-grid{grid-template-columns:repeat(auto-fill,minmax(320px,1fr))}
+/* ===== FULL SCREEN PAGE CSS ===== */
+#rentPage {
+  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
+  background: #f8f9fa; z-index: 9999; overflow-y: auto; color: #333;
+}
+.rent-header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
+.rent-header h2 { margin: 0; font-size: 20px; color: #ea580c; display: flex; align-items: center; gap: 10px; }
+.back-btn { background: #f1f5f9; border: none; padding: 8px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; color: #475569; transition: 0.2s; font-size: 14px; }
+.back-btn:hover { background: #e2e8f0; color: #ea580c; }
+.rent-search-bar { padding: 10px 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; width: 300px; outline: none; transition: 0.2s; }
+.rent-search-bar:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgba(234,88,12,0.1); }
 
-/* Loading Spinner */
-.loader{display:none;border:4px solid #f3f3f3;border-top:4px solid var(--gold);border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:40px auto}
-@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+.rent-container { padding: 30px 5%; max-width: 1400px; margin: auto; }
+.rent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rent-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+.rent-card:hover { border-color: #ea580c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(234,88,12,0.1); }
+.rent-card img { width: 80px; height: 80px; object-fit: contain; border-radius: 8px; background: #f8f9fa; padding: 5px; border: 1px solid #eee; }
+.rent-info { flex: 1; }
+.rent-info h3 { margin: 0 0 4px; font-size: 15px; color: #1e293b; font-weight: 700; }
+.rent-info p { margin: 0 0 10px; font-size: 12px; color: #64748b; line-height: 1.4; }
+.rent-tags { display: flex; gap: 8px; align-items: center; }
+.rent-price { background: #ffedd5; color: #ea580c; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; border: 1px solid #fed7aa; }
+.rent-instant { background: #dcfce7; color: #16a34a; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; border: 1px solid #bbf7d0; }
+.rent-instant::before { content: ""; width: 6px; height: 6px; background: #16a34a; border-radius: 50%; display: inline-block; }
+
+.rent-loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #ea580c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 50px auto; }
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.rent-no-results { text-align: center; color: #64748b; padding: 30px; grid-column: 1/-1; display: none; font-size: 16px; }
+
+@media(max-width:1024px) { .rent-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:768px) { .rent-header { flex-direction: column; gap: 15px; } .rent-search-bar { width: 100%; } .rent-grid { grid-template-columns: 1fr; } }
 
 @media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}.tool-card{flex-direction:column;text-align:center}.tool-info h3{justify-content:center}.tool-tags{justify-content:center}}
@@ -92,8 +109,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 </div></section>
 
 <div class="wrap stats">
-<!-- YAHAN CLICK KARNE PAR POPUP MODAL KHULEGA -->
-<article class="card" style="text-align:center; cursor:pointer;" onclick="openRentModal()"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
+<!-- CLICK KARNE PAR OPEN HOGA -->
+<article class="card" style="text-align:center; cursor:pointer;" onclick="openRentPage()"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
 <article class="card" style="text-align:center"><div class="ico">⚙</div><h3>Tools Credit</h3><p>Buy credits for various unlocking and repair tools.</p></article>
 <article class="card" style="text-align:center"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
 <article class="card" style="text-align:center"><div class="ico">◉</div><h3>Technician Support</h3><p>Contact GSM HK for help and service enquiries.</p></article></div>
@@ -103,14 +120,12 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <article class="card service"><div class="ico">⚙</div><h3>Authorized Software Support</h3><p>Help finding official manufacturer software, drivers and update guidance.</p><a class="link" href="https://wa.me/917018698655?text=I%20need%20authorized%20software%20support.">Enquire on WhatsApp →</a></article>
 <article class="card service"><div class="ico">▣</div><h3>Remote Technician Help</h3><p>Ask about a supervised remote support appointment for a repair issue.</p><a class="link" href="https://wa.me/917018698655?text=I%20want%20to%20ask%20about%20remote%20technician%20support.">Book an enquiry →</a></article></div></div></section>
 
-<!-- ===== TOOLS SECTION ===== -->
 <section id="tools"><div class="wrap">
-<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2 id="toolsTitle">Tools & Resources</h2><p id="toolsSubTitle">Ask us about compatible, authorized repair and diagnostic resources.</p></div>
+<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div>
 <div class="toolbar">
 <input type="text" id="searchInput" placeholder="🔍 Search tool (e.g. Chimera, UnlockTool...)">
 <select id="catFilter">
 <option value="">All Categories</option>
-<option value="Rent Tool">Tools Rent</option>
 <option value="Unlock Tool">Unlock Tool</option>
 <option value="FRP Tool">FRP Tool</option>
 <option value="Box & Dongle">Box & Dongle</option>
@@ -152,43 +167,53 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <footer><div class="wrap foot"><span>© <span id="year"></span> GSM HK. All rights reserved.</span><span>Independent repair resource portal. Brand names belong to their respective owners.</span></div></footer>
 <a class="float" href="https://wa.me/917018698655?text=Hello%20GSM%20HK">☏ WhatsApp</a>
 
-<!-- ===== POPUP MODAL (Hidden by default) ===== -->
-<div class="modal-overlay" id="rentModal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2>Available Tools for Rent</h2>
-      <button class="close-btn" onclick="closeRentModal()">&times;</button>
-    </div>
-    <div class="modal-body">
-      <div class="loader" id="loader" style="display:block;"></div>
-      <div class="tools-grid" id="rentToolsGrid"></div>
-    </div>
+
+<!-- ===== FULL SCREEN RENT PAGE ===== -->
+<div id="rentPage">
+  <div class="rent-header">
+    <button class="back-btn" onclick="closeRentPage()">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+      Back to Home
+    </button>
+    <h2>⚡ Tools Rent Store</h2>
+    <input type="text" id="rentSearch" class="rent-search-bar" placeholder="🔍 Search Rent Tools..." onkeyup="filterRentTools()">
+  </div>
+  
+  <div class="rent-container">
+    <div class="rent-loader" id="rentLoader"></div>
+    <div class="rent-grid" id="rentGrid"></div>
+    <div class="rent-no-results" id="rentNoResults">Koi tool nahi mila. Doosra naam try karein.</div>
   </div>
 </div>
 
 
 <script>
 /* ===== TOOLS DATA ===== */
+/* Yahan maine 9 Rent wale tools daal diye hain. Aap aur add kar sakte hain cat:"Rent Tool" karke. */
 const TOOLS = [
-  /* Rent wale tools (cat:"Rent Tool") */
   {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", dur:"2 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"AndroidWinTool (AWT) Rent", cat:"Rent Tool", desc:"Auto Username Password [Time: 48 Hours]", price:"131.58 INR", dur:"48 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"224.4 INR", dur:"10 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"APIZU Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 6 hour]", price:"102 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Arab FRP Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 6 Hours]", price:"10040.88 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"BETA MDM Fix tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 1 hour]", price:"112.2 INR", dur:"1 Hour", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"CF TOOL Rent", cat:"Rent Tool", desc:"Auto Username Password [Time: 6Hour]", price:"91.8 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"CP tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"122.4 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
   
-  /* Baaki normal tools */
+  /* Baaki normal tools jo home page par dikhenge */
   {name:"UnlockTool",cat:"Unlock Tool",desc:"FRP, flashing, unlocking for all major brands.",price:"2499 INR",dur:"3 months", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"ChimeraTool",cat:"Unlock Tool",desc:"Samsung, Huawei, MTK, Qualcomm support.",price:"8999 INR",dur:"1 year", img:"YAHAN_IMAGE_LINK_DALE"}
 ];
 
-/* ===== MAIN PAGE TOOLS RENDER ===== */
+/* ===== RENDER MAIN PAGE TOOLS ===== */
 const grid=document.getElementById("toolsGrid"),noResults=document.getElementById("noResults");
 function renderTools(list, targetGrid = grid){
   if(list.length===0){targetGrid.innerHTML="";if(targetGrid===grid) noResults.style.display="block";return}
   if(targetGrid===grid) noResults.style.display="none";
   
   targetGrid.innerHTML=list.map(t=>`
-  <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Rent/Buy '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
+  <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Buy/Rent '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
   <article class="tool-card">
     <img src="${t.img}" alt="${t.name}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\'><rect width=\'70\' height=\'70\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23999\'>No Img</text></svg>'">
     <div class="tool-info">
@@ -203,55 +228,48 @@ function renderTools(list, targetGrid = grid){
   </a>`).join("");
 }
 
-/* ===== MODAL LOGIC ===== */
-const rentModal = document.getElementById("rentModal");
-const rentToolsGrid = document.getElementById("rentToolsGrid");
-const loader = document.getElementById("loader");
+/* ===== RENT PAGE LOGIC ===== */
+const rentPage = document.getElementById("rentPage");
+const rentGrid = document.getElementById("rentGrid");
+const rentLoader = document.getElementById("rentLoader");
+const rentNoResults = document.getElementById("rentNoResults");
 
-function openRentModal(){
-  rentModal.classList.add("active");
-  document.body.style.overflow = "hidden"; // Prevent background scrolling
+function openRentPage(){
+  rentPage.style.display = "block";
+  document.body.style.overflow = "hidden"; // Scroll band
   
-  // Show loader
-  loader.style.display = "block";
-  rentToolsGrid.innerHTML = "";
-  
-  // Load data after 800ms (Fake loading effect)
+  // Loading effect
+  rentLoader.style.display = "block";
+  rentGrid.innerHTML = "";
+  rentNoResults.style.display = "none";
+  document.getElementById("rentSearch").value = "";
+
   setTimeout(() => {
-    loader.style.display = "none";
+    rentLoader.style.display = "none";
     const rentOnly = TOOLS.filter(t => t.cat === "Rent Tool");
-    renderTools(rentOnly, rentToolsGrid);
-  }, 800);
+    renderRentTools(rentOnly);
+  }, 600);
 }
 
-function closeRentModal(){
-  rentModal.classList.remove("active");
+function closeRentPage(){
+  rentPage.style.display = "none";
   document.body.style.overflow = "auto";
 }
 
-// Close modal if clicking outside content
-rentModal.addEventListener("click", (e) => {
-  if(e.target === rentModal) closeRentModal();
-});
-
-
-/* ===== MAIN PAGE FILTER ===== */
-const searchInput=document.getElementById("searchInput"),catFilter=document.getElementById("catFilter");
-function applyFilter(){
-  const q=searchInput.value.toLowerCase().trim(),cat=catFilter.value;
-  const filtered=TOOLS.filter(t=>{
-    const ms=t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);
-    const mc=!cat||t.cat===cat;
-    return ms&&mc;
-  });
-  renderTools(filtered);
-}
-
-searchInput.addEventListener("input",applyFilter);
-catFilter.addEventListener("change",applyFilter);
-renderTools(TOOLS);
-document.getElementById("year").textContent=new Date().getFullYear();
-document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
-document.addEventListener("click",(e)=>{const nav=document.getElementById("nav"),menuBtn=document.querySelector(".menu");if(nav.classList.contains("open")&&!nav.contains(e.target)&&!menuBtn.contains(e.target)){nav.classList.remove("open")}});
-</script>
-</body></html>
+function renderRentTools(list){
+  if(list.length === 0){
+    rentGrid.innerHTML = "";
+    rentNoResults.style.display = "block";
+    return;
+  }
+  rentNoResults.style.display = "none";
+  rentGrid.innerHTML = list.map(t => `
+    <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Rent '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
+    <article class="rent-card">
+      <img src="${t.img}" alt="${t.name}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\'><rect width=\'70\' height=\'70\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23999\'>No Img</text></svg>'">
+      <div class="rent-info">
+        <h3>${t.name}</h3>
+        <p>{ ${t.desc} }</p>
+        <div class="rent-tags">
+          <span class="rent-price">${t.price}</span>
+          <span class="rent-instant">INST
