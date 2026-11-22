@@ -55,7 +55,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .faq details[open] summary::after{content:"−"}
 .faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
 
-/* ===== FULL SCREEN PAGE CSS ===== */
+/* ===== FULL SCREEN RENT PAGE CSS ===== */
 #rentPage {
   display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
   background: #f8f9fa; z-index: 9999; overflow-y: auto; color: #333;
@@ -189,7 +189,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 
 <script>
 /* ===== TOOLS DATA ===== */
-/* Yahan maine 9 Rent wale tools daal diye hain. Aap aur add kar sakte hain cat:"Rent Tool" karke. */
+/* Yahan maine 9 Rent wale tools daal diye hain (Jaise image me the). Aap aur add kar sakte hain cat:"Rent Tool" karke. */
 const TOOLS = [
   {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", dur:"2 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
@@ -272,4 +272,4 @@ function renderRentTools(list){
         <p>{ ${t.desc} }</p>
         <div class="rent-tags">
           <span class="rent-price">${t.price}</span>
-          <span class="rent-instant">INST
+          <span class="rent-instant
