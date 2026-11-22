@@ -272,4 +272,40 @@ function renderRentTools(list){
         <p>{ ${t.desc} }</p>
         <div class="rent-tags">
           <span class="rent-price">${t.price}</span>
-          <span class="rent-instant
+          <span class="rent-instant">INSTANT</span>
+        </div>
+      </div>
+    </article>
+    </a>`).join("");
+}
+
+function filterRentTools(){
+  const q = document.getElementById("rentSearch").value.toLowerCase().trim();
+  const filtered = TOOLS.filter(t => 
+    t.cat === "Rent Tool" && 
+    (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q))
+  );
+  renderRentTools(filtered);
+}
+
+
+/* ===== MAIN PAGE FILTER ===== */
+const searchInput=document.getElementById("searchInput"),catFilter=document.getElementById("catFilter");
+function applyFilter(){
+  const q=searchInput.value.toLowerCase().trim(),cat=catFilter.value;
+  const filtered=TOOLS.filter(t=>{
+    const ms=t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);
+    const mc=!cat||t.cat===cat;
+    return ms&&mc;
+  });
+  renderTools(filtered);
+}
+
+searchInput.addEventListener("input",applyFilter);
+catFilter.addEventListener("change",applyFilter);
+renderTools(TOOLS);
+document.getElementById("year").textContent=new Date().getFullYear();
+document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
+document.addEventListener("click",(e)=>{const nav=document.getElementById("nav"),menuBtn=document.querySelector(".menu");if(nav.classList.contains("open")&&!nav.contains(e.target)&&!menuBtn.contains(e.target)){nav.classList.remove("open")}});
+</script>
+</body></html>
