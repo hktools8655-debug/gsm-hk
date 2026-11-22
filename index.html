@@ -11,7 +11,6 @@
 a{color:inherit;text-decoration:none}.wrap{width:min(1160px,92%);margin:auto}.top{background:#090a0e;border-bottom:1px solid var(--line);color:var(--muted);font-size:12px}.top .wrap{display:flex;justify-content:space-between;padding:8px 0;gap:10px;flex-wrap:wrap}
 header{position:sticky;top:0;z-index:5;background:#08090df2;backdrop-filter:blur(12px);border-bottom:1px solid #39301d}.nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .brand{font-size:25px;font-weight:900;letter-spacing:-1px;display:flex;align-items:center;gap:10px}.brand b,.gold{color:var(--gold)}.brand small{display:block;color:var(--muted);font-size:10px;letter-spacing:2px}
-/* LOGO IMAGE CSS */
 .logo{width:44px;height:44px;border:1px solid var(--gold);border-radius:13px;display:grid;place-items:center;color:var(--gold);font-size:23px;overflow:hidden}
 .logo img{width:100%;height:100%;object-fit:cover}
 nav{display:flex;gap:22px;font-size:14px;font-weight:700;color:#d4d8e0}nav a:hover{color:var(--gold)}.btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
@@ -30,17 +29,23 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .toolbar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:22px;justify-content:center}
 .toolbar input,.toolbar select{padding:12px 16px;border-radius:13px;border:1px solid var(--line);background:#11141a;color:var(--text);font-size:14px;font-family:inherit;min-width:220px}
 .toolbar input:focus,.toolbar select:focus{outline:none;border-color:var(--gold)}
-.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:15px}
-.tool-card{background:linear-gradient(145deg,#14171e,#0e1015);border:1px solid var(--line);border-radius:17px;padding:22px;transition:.2s;display:flex;flex-direction:column}
-.tool-card:hover{border-color:#8b6518;transform:translateY(-3px)}
-/* TOOL IMAGE CSS */
-.tool-card img{width:60px;height:60px;object-fit:contain;margin-bottom:12px;border-radius:10px}
-.tool-card .cat{font-size:11px;color:var(--gold);font-weight:800;letter-spacing:1px;margin-bottom:8px}
-.tool-card h3{margin:0 0 6px;font-size:17px}
-.tool-card p{margin:0 0 14px;color:var(--muted);font-size:13px;flex-grow:1}
-.tool-card .price{font-size:15px;font-weight:900;color:var(--gold);margin-bottom:12px}
-.tool-card .price small{color:var(--muted);font-weight:400;font-size:11px}
-.tool-card .btn{width:100%;text-align:center;padding:10px}
+
+/* INS-UNLOCKER STYLE TOOL CARDS */
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:15px}
+.tool-card{background:#fff;border:1px solid #e0e0e0;border-radius:12px;padding:15px;transition:.2s;display:flex;align-items:center;gap:15px;position:relative;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.tool-card:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 5px 15px rgba(255,185,0,0.2)}
+.tool-card img{width:70px;height:70px;object-fit:contain;border-radius:8px;border:1px solid #eee;padding:4px}
+.tool-info{flex:1}
+.tool-info h3{margin:0 0 5px;font-size:15px;color:#222;font-weight:700;display:flex;align-items:center;gap:5px}
+.tool-info .desc{font-size:12px;color:#666;margin-bottom:10px;display:block}
+.tool-tags{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.price-tag{background:#fff1d6;color:#d97706;padding:3px 8px;border-radius:4px;font-size:12px;font-weight:800;border:1px solid #fde68a}
+.instant-tag{background:#dcfce7;color:#16a34a;padding:3px 8px;border-radius:4px;font-size:11px;font-weight:800;border:1px solid #bbf7d0;display:flex;align-items:center;gap:3px}
+.instant-tag::before{content:"";width:6px;height:6px;background:#16a34a;border-radius:50%;display:inline-block}
+/* Loading Spinner */
+.loader{display:none;border:4px solid #f3f3f3;border-top:4px solid var(--gold);border-radius:50%;width:40px;height:40px;animation:spin 1s linear infinite;margin:40px auto}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
 .no-results{text-align:center;color:var(--muted);padding:30px;grid-column:1/-1;display:none}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .step{background:#11141a;border:1px solid var(--line);border-radius:17px;padding:22px;text-align:center}
@@ -57,7 +62,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
 
 @media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}}
+@media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}.tool-card{flex-direction:column;text-align:center}.tool-info h3{justify-content:center}.tool-tags{justify-content:center}}
 </style></head><body>
 
 <div class="top"><div class="wrap"><span>● <b class="gold">GSM HK</b> | Mobile Repair Resources</span><span>WhatsApp: +91 70186 98655</span></div></div>
@@ -78,10 +83,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 </div></section>
 
 <div class="wrap stats">
-<!-- YAHAN CLICK KARNE PAR TOOLS WALE SECTION PAR JAYEGA -->
-<a href="#tools" style="text-decoration:none; color:inherit;">
-  <article class="card" style="text-align:center; height:100%;"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
-</a>
+<!-- YAHAN CLICK KARNE PAR TOOLS SECTION ME JAYEGA AUR SIRF RENT WALE TOOLS FILTER HO JAYENGE -->
+<article class="card" style="text-align:center; cursor:pointer;" onclick="showRentTools()"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
 <article class="card" style="text-align:center"><div class="ico">⚙</div><h3>Tools Credit</h3><p>Buy credits for various unlocking and repair tools.</p></article>
 <article class="card" style="text-align:center"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
 <article class="card" style="text-align:center"><div class="ico">◉</div><h3>Technician Support</h3><p>Contact GSM HK for help and service enquiries.</p></article></div>
@@ -93,11 +96,12 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 
 <!-- ===== TOOLS SECTION ===== -->
 <section id="tools"><div class="wrap">
-<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2>Tools & Resources</h2><p>Ask us about compatible, authorized repair and diagnostic resources.</p></div>
+<div class="head"><div class="eyebrow">TECHNICIAN CORNER</div><h2 id="toolsTitle">Tools & Resources</h2><p id="toolsSubTitle">Ask us about compatible, authorized repair and diagnostic resources.</p></div>
 <div class="toolbar">
 <input type="text" id="searchInput" placeholder="🔍 Search tool (e.g. Chimera, UnlockTool...)">
 <select id="catFilter">
 <option value="">All Categories</option>
+<option value="Rent Tool">Tools Rent</option>
 <option value="Unlock Tool">Unlock Tool</option>
 <option value="FRP Tool">FRP Tool</option>
 <option value="Box & Dongle">Box & Dongle</option>
@@ -105,6 +109,7 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <option value="Auth Service">Auth Service</option>
 </select>
 </div>
+<div class="loader" id="loader"></div>
 <div class="tools-grid" id="toolsGrid"></div>
 <div class="no-results" id="noResults">Koi tool nahi mila. Doosra naam try karein.</div>
 </div></section>
@@ -141,32 +146,85 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 
 <script>
 /* ===== TOOLS DATA ===== */
-/* Yahan aap jo tools add karoge wo niche dikhenge. Maine kuch purane add kar diye hain. */
+/* Yahan maine 3 Rent wale tools daal diye hain (Jaise image me the). Aap aur add kar sakte hain cat:"Rent Tool" karke. */
 const TOOLS = [
-{name:"UnlockTool",cat:"Unlock Tool",desc:"FRP, flashing, unlocking for all major brands.",price:"₹2,499",dur:"3 months", img:"YAHAN_TOOL_IMAGE_LINK_DALE"},
-{name:"ChimeraTool",cat:"Unlock Tool",desc:"Samsung, Huawei, MTK, Qualcomm support.",price:"₹8,999",dur:"1 year", img:"YAHAN_TOOL_IMAGE_LINK_DALE"},
-{name:"TSM Tool Pro",cat:"FRP Tool",desc:"Samsung FRP, MDM, IMEI and more.",price:"₹1,999",dur:"6 months", img:"YAHAN_TOOL_IMAGE_LINK_DALE"},
-{name:"DFT Pro",cat:"Unlock Tool",desc:"Qualcomm/MTK flashing and repair.",price:"₹3,999",dur:"1 year", img:"YAHAN_TOOL_IMAGE_LINK_DALE"},
-{name:"Hydra Tool",cat:"Box & Dongle",desc:"Multi-brand flashing & FRP solution.",price:"₹4,499",dur:"1 year", img:"YAHAN_TOOL_IMAGE_LINK_DALE"}
+  {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", dur:"2 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"224.4 INR", dur:"10 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"APIZU Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 6 hour]", price:"102 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  
+  /* Baaki normal tools */
+  {name:"UnlockTool",cat:"Unlock Tool",desc:"FRP, flashing, unlocking for all major brands.",price:"2499 INR",dur:"3 months", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"ChimeraTool",cat:"Unlock Tool",desc:"Samsung, Huawei, MTK, Qualcomm support.",price:"8999 INR",dur:"1 year", img:"YAHAN_IMAGE_LINK_DALE"}
 ];
 
-const grid=document.getElementById("toolsGrid"),noResults=document.getElementById("noResults");
+const grid=document.getElementById("toolsGrid"),noResults=document.getElementById("noResults"),loader=document.getElementById("loader");
+const toolsTitle = document.getElementById("toolsTitle");
+const toolsSubTitle = document.getElementById("toolsSubTitle");
+
 function renderTools(list){
-if(list.length===0){grid.innerHTML="";noResults.style.display="block";return}
-noResults.style.display="none";
-grid.innerHTML=list.map(t=>`
-<article class="tool-card">
-  <img src="${t.img}" alt="${t.name}" onerror="this.style.display='none'">
-  <div class="cat">${t.cat}</div>
-  <h3>${t.name}</h3>
-  <p>${t.desc}</p>
-  <div class="price">${t.price} <small>/ ${t.dur}</small></div>
-  <a class="btn" target="_blank" rel="noopener" href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to BUY '+t.name+' ('+t.dur+') - Price: '+t.price)}">Buy Now ↗</a>
-</article>`).join("");
+  if(list.length===0){grid.innerHTML="";noResults.style.display="block";return}
+  noResults.style.display="none";
+  
+  // Ins-Unlocker Style Card Design
+  grid.innerHTML=list.map(t=>`
+  <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Buy/Rent '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
+  <article class="tool-card">
+    <img src="${t.img}" alt="${t.name}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\'><rect width=\'70\' height=\'70\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23999\'>No Img</text></svg>'">
+    <div class="tool-info">
+      <h3>${t.name} ⭐</h3>
+      <span class="desc">{ ${t.desc} }</span>
+      <div class="tool-tags">
+        <span class="price-tag">${t.price}</span>
+        <span class="instant-tag">INSTANT</span>
+      </div>
+    </div>
+  </article>
+  </a>`).join("");
 }
+
+/* Function for Tools Rent Click */
+function showRentTools(){
+  // Scroll to tools section
+  document.getElementById('tools').scrollIntoView();
+  
+  // Show Loader (Loading effect)
+  grid.innerHTML = "";
+  noResults.style.display = "none";
+  loader.style.display = "block";
+  
+  // Update Headings
+  toolsTitle.innerText = "Available Tools for Rent";
+  toolsSubTitle.innerText = "Select a tool to rent instantly via WhatsApp.";
+
+  // Wait for 800ms to show loading effect, then show Rent Tools
+  setTimeout(() => {
+    loader.style.display = "none";
+    catFilter.value = "Rent Tool"; // Automatically select "Tools Rent" in filter
+    applyFilter();
+  }, 800);
+}
+
 const searchInput=document.getElementById("searchInput"),catFilter=document.getElementById("catFilter");
-function applyFilter(){const q=searchInput.value.toLowerCase().trim(),cat=catFilter.value;const filtered=TOOLS.filter(t=>{const ms=t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);const mc=!cat||t.cat===cat;return ms&&mc});renderTools(filtered)}
-searchInput.addEventListener("input",applyFilter);catFilter.addEventListener("change",applyFilter);
+function applyFilter(){
+  const q=searchInput.value.toLowerCase().trim(),cat=catFilter.value;
+  const filtered=TOOLS.filter(t=>{
+    const ms=t.name.toLowerCase().includes(q)||t.desc.toLowerCase().includes(q);
+    const mc=!cat||t.cat===cat;
+    return ms&&mc;
+  });
+  renderTools(filtered);
+}
+
+// Reset headings if user changes filter manually
+catFilter.addEventListener("change", function() {
+  if(this.value !== "Rent Tool"){
+    toolsTitle.innerText = "Tools & Resources";
+    toolsSubTitle.innerText = "Ask us about compatible, authorized repair and diagnostic resources.";
+  }
+});
+
+searchInput.addEventListener("input",applyFilter);
 renderTools(TOOLS);
 document.getElementById("year").textContent=new Date().getFullYear();
 document.querySelectorAll("nav a").forEach(a=>a.addEventListener("click",()=>document.getElementById("nav").classList.remove("open")));
