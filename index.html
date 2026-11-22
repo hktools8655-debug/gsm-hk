@@ -55,37 +55,37 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .faq details[open] summary::after{content:"−"}
 .faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
 
-/* ===== FULL SCREEN RENT PAGE CSS ===== */
-#rentPage {
+/* ===== FULL SCREEN SERVICE PAGE CSS ===== */
+#servicePage {
   display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
   background: #f8f9fa; z-index: 9999; overflow-y: auto; color: #333;
 }
-.rent-header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
-.rent-header h2 { margin: 0; font-size: 20px; color: #ea580c; display: flex; align-items: center; gap: 10px; }
+.service-header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
+.service-header h2 { margin: 0; font-size: 20px; color: #ea580c; display: flex; align-items: center; gap: 10px; }
 .back-btn { background: #f1f5f9; border: none; padding: 8px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; color: #475569; transition: 0.2s; font-size: 14px; }
 .back-btn:hover { background: #e2e8f0; color: #ea580c; }
-.rent-search-bar { padding: 10px 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; width: 300px; outline: none; transition: 0.2s; }
-.rent-search-bar:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgba(234,88,12,0.1); }
+.service-search-bar { padding: 10px 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; width: 300px; outline: none; transition: 0.2s; }
+.service-search-bar:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgba(234,88,12,0.1); }
 
-.rent-container { padding: 30px 5%; max-width: 1400px; margin: auto; }
-.rent-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.rent-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
-.rent-card:hover { border-color: #ea580c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(234,88,12,0.1); }
-.rent-card img { width: 80px; height: 80px; object-fit: contain; border-radius: 8px; background: #f8f9fa; padding: 5px; border: 1px solid #eee; }
-.rent-info { flex: 1; }
-.rent-info h3 { margin: 0 0 4px; font-size: 15px; color: #1e293b; font-weight: 700; }
-.rent-info p { margin: 0 0 10px; font-size: 12px; color: #64748b; line-height: 1.4; }
-.rent-tags { display: flex; gap: 8px; align-items: center; }
-.rent-price { background: #ffedd5; color: #ea580c; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; border: 1px solid #fed7aa; }
-.rent-instant { background: #dcfce7; color: #16a34a; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; border: 1px solid #bbf7d0; }
-.rent-instant::before { content: ""; width: 6px; height: 6px; background: #16a34a; border-radius: 50%; display: inline-block; }
+.service-container { padding: 30px 5%; max-width: 1400px; margin: auto; }
+.service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.service-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
+.service-card:hover { border-color: #ea580c; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(234,88,12,0.1); }
+.service-card img { width: 80px; height: 80px; object-fit: contain; border-radius: 8px; background: #f8f9fa; padding: 5px; border: 1px solid #eee; }
+.service-info { flex: 1; }
+.service-info h3 { margin: 0 0 4px; font-size: 15px; color: #1e293b; font-weight: 700; }
+.service-info p { margin: 0 0 10px; font-size: 12px; color: #64748b; line-height: 1.4; }
+.service-tags { display: flex; gap: 8px; align-items: center; }
+.service-price { background: #ffedd5; color: #ea580c; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; border: 1px solid #fed7aa; }
+.service-instant { background: #dcfce7; color: #16a34a; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; border: 1px solid #bbf7d0; }
+.service-instant::before { content: ""; width: 6px; height: 6px; background: #16a34a; border-radius: 50%; display: inline-block; }
 
-.rent-loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #ea580c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 50px auto; }
+.service-loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #ea580c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 50px auto; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-.rent-no-results { text-align: center; color: #64748b; padding: 30px; grid-column: 1/-1; display: none; font-size: 16px; }
+.service-no-results { text-align: center; color: #64748b; padding: 30px; grid-column: 1/-1; display: none; font-size: 16px; }
 
-@media(max-width:1024px) { .rent-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(max-width:768px) { .rent-header { flex-direction: column; gap: 15px; } .rent-search-bar { width: 100%; } .rent-grid { grid-template-columns: 1fr; } }
+@media(max-width:1024px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
+@media(max-width:768px) { .service-header { flex-direction: column; gap: 15px; } .service-search-bar { width: 100%; } .service-grid { grid-template-columns: 1fr; } }
 
 @media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}.tool-card{flex-direction:column;text-align:center}.tool-info h3{justify-content:center}.tool-tags{justify-content:center}}
@@ -109,10 +109,10 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 </div></section>
 
 <div class="wrap stats">
-<!-- CLICK KARNE PAR OPEN HOGA -->
-<article class="card" style="text-align:center; cursor:pointer;" onclick="openRentPage()"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
-<article class="card" style="text-align:center"><div class="ico">⚙</div><h3>Tools Credit</h3><p>Buy credits for various unlocking and repair tools.</p></article>
-<article class="card" style="text-align:center"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
+<!-- TEENO CLICKABLE HO GAYE HAIN -->
+<article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Rent Tool')"><div class="ico">▦</div><h3>Tools Rent</h3><p>Rent premium tools for your mobile repair needs.</p></article>
+<article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Credit')"><div class="ico">⚙</div><h3>Tools Credit</h3><p>Buy credits for various unlocking and repair tools.</p></article>
+<article class="card" style="text-align:center; cursor:pointer;" onclick="openServicePage('Activation')"><div class="ico">⌁</div><h3>Tools Activation</h3><p>Get instant activation for your software licenses.</p></article>
 <article class="card" style="text-align:center"><div class="ico">◉</div><h3>Technician Support</h3><p>Contact GSM HK for help and service enquiries.</p></article></div>
 
 <section id="services"><div class="wrap"><div class="head"><div class="eyebrow">WHAT WE OFFER</div><h2>Services & Support</h2><p>Practical help for phone technicians and device owners.</p></div><div class="grid">
@@ -168,42 +168,41 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 <a class="float" href="https://wa.me/917018698655?text=Hello%20GSM%20HK">☏ WhatsApp</a>
 
 
-<!-- ===== FULL SCREEN RENT PAGE ===== -->
-<div id="rentPage">
-  <div class="rent-header">
-    <button class="back-btn" onclick="closeRentPage()">
+<!-- ===== FULL SCREEN SERVICE PAGE ===== -->
+<div id="servicePage">
+  <div class="service-header">
+    <button class="back-btn" onclick="closeServicePage()">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
       Back to Home
     </button>
-    <h2>⚡ Tools Rent Store</h2>
-    <input type="text" id="rentSearch" class="rent-search-bar" placeholder="🔍 Search Rent Tools..." onkeyup="filterRentTools()">
+    <h2 id="servicePageTitle">⚡ Tools Store</h2>
+    <input type="text" id="serviceSearch" class="service-search-bar" placeholder="🔍 Search Tools..." onkeyup="filterServiceTools()">
   </div>
   
-  <div class="rent-container">
-    <div class="rent-loader" id="rentLoader"></div>
-    <div class="rent-grid" id="rentGrid"></div>
-    <div class="rent-no-results" id="rentNoResults">Koi tool nahi mila. Doosra naam try karein.</div>
+  <div class="service-container">
+    <div class="service-loader" id="serviceLoader"></div>
+    <div class="service-grid" id="serviceGrid"></div>
+    <div class="service-no-results" id="serviceNoResults">Koi tool nahi mila. Doosra naam try karein.</div>
   </div>
 </div>
 
 
 <script>
 /* ===== TOOLS DATA ===== */
-/* Yahan maine 9 Rent wale tools daal diye hain (Jaise image me the). Aap aur add kar sakte hain cat:"Rent Tool" karke. */
+/* Yahan maine category set kar di hai. Aapko bas naye tools add karne hain aur unki cat likhni hai (Rent Tool, Credit, ya Activation) */
 const TOOLS = [
-  {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", dur:"2 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"AndroidWinTool (AWT) Rent", cat:"Rent Tool", desc:"Auto Username Password [Time: 48 Hours]", price:"131.58 INR", dur:"48 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"224.4 INR", dur:"10 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"APIZU Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 6 hour]", price:"102 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"Arab FRP Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 6 Hours]", price:"10040.88 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"BETA MDM Fix tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 1 hour]", price:"112.2 INR", dur:"1 Hour", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"CF TOOL Rent", cat:"Rent Tool", desc:"Auto Username Password [Time: 6Hour]", price:"91.8 INR", dur:"6 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"CP tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"122.4 INR", dur:"24 Hours", img:"YAHAN_IMAGE_LINK_DALE"},
+  /* --- RENT TOOLS --- */
+  {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"142.8 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"30.6 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"224.4 INR", img:"YAHAN_IMAGE_LINK_DALE"},
   
-  /* Baaki normal tools jo home page par dikhenge */
-  {name:"UnlockTool",cat:"Unlock Tool",desc:"FRP, flashing, unlocking for all major brands.",price:"2499 INR",dur:"3 months", img:"YAHAN_IMAGE_LINK_DALE"},
-  {name:"ChimeraTool",cat:"Unlock Tool",desc:"Samsung, Huawei, MTK, Qualcomm support.",price:"8999 INR",dur:"1 year", img:"YAHAN_IMAGE_LINK_DALE"}
+  /* --- CREDIT TOOLS --- */
+  {name:"Phoenix Service Tool Credits", cat:"Credit", desc:"25 Credits for Samsung FRP", price:"500 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"TSM Tool Credits", cat:"Credit", desc:"10 Credits for various unlocks", price:"300 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  
+  /* --- ACTIVATION TOOLS --- */
+  {name:"UnlockTool Activation", cat:"Activation", desc:"3 Months License Activation", price:"2499 INR", img:"YAHAN_IMAGE_LINK_DALE"},
+  {name:"ChimeraTool Activation", cat:"Activation", desc:"1 Year License Activation", price:"8999 INR", img:"YAHAN_IMAGE_LINK_DALE"}
 ];
 
 /* ===== RENDER MAIN PAGE TOOLS ===== */
@@ -213,7 +212,7 @@ function renderTools(list, targetGrid = grid){
   if(targetGrid===grid) noResults.style.display="none";
   
   targetGrid.innerHTML=list.map(t=>`
-  <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Buy/Rent '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
+  <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
   <article class="tool-card">
     <img src="${t.img}" alt="${t.name}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\'><rect width=\'70\' height=\'70\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23999\'>No Img</text></svg>'">
     <div class="tool-info">
@@ -228,64 +227,74 @@ function renderTools(list, targetGrid = grid){
   </a>`).join("");
 }
 
-/* ===== RENT PAGE LOGIC ===== */
-const rentPage = document.getElementById("rentPage");
-const rentGrid = document.getElementById("rentGrid");
-const rentLoader = document.getElementById("rentLoader");
-const rentNoResults = document.getElementById("rentNoResults");
+/* ===== SERVICE PAGE LOGIC (Rent, Credit, Activation) ===== */
+const servicePage = document.getElementById("servicePage");
+const serviceGrid = document.getElementById("serviceGrid");
+const serviceLoader = document.getElementById("serviceLoader");
+const serviceNoResults = document.getElementById("serviceNoResults");
+let currentCategory = "";
 
-function openRentPage(){
-  rentPage.style.display = "block";
+function openServicePage(category){
+  currentCategory = category;
+  servicePage.style.display = "block";
   document.body.style.overflow = "hidden"; // Scroll band
   
+  // Title update karein
+  const titleMap = {
+    "Rent Tool": "⚡ Tools Rent Store",
+    "Credit": "💰 Tools Credit Store",
+    "Activation": "🔑 Tools Activation Store"
+  };
+  document.getElementById("servicePageTitle").innerText = titleMap[category] || "⚡ Tools Store";
+
   // Loading effect
-  rentLoader.style.display = "block";
-  rentGrid.innerHTML = "";
-  rentNoResults.style.display = "none";
-  document.getElementById("rentSearch").value = "";
+  serviceLoader.style.display = "block";
+  serviceGrid.innerHTML = "";
+  serviceNoResults.style.display = "none";
+  document.getElementById("serviceSearch").value = "";
 
   setTimeout(() => {
-    rentLoader.style.display = "none";
-    const rentOnly = TOOLS.filter(t => t.cat === "Rent Tool");
-    renderRentTools(rentOnly);
+    serviceLoader.style.display = "none";
+    const filteredList = TOOLS.filter(t => t.cat === category);
+    renderServiceTools(filteredList);
   }, 600);
 }
 
-function closeRentPage(){
-  rentPage.style.display = "none";
+function closeServicePage(){
+  servicePage.style.display = "none";
   document.body.style.overflow = "auto";
 }
 
-function renderRentTools(list){
+function renderServiceTools(list){
   if(list.length === 0){
-    rentGrid.innerHTML = "";
-    rentNoResults.style.display = "block";
+    serviceGrid.innerHTML = "";
+    serviceNoResults.style.display = "block";
     return;
   }
-  rentNoResults.style.display = "none";
-  rentGrid.innerHTML = list.map(t => `
-    <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want to Rent '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
-    <article class="rent-card">
+  serviceNoResults.style.display = "none";
+  serviceGrid.innerHTML = list.map(t => `
+    <a href="https://wa.me/917018698655?text=${encodeURIComponent('Hello GSM HK, I want '+t.name+' - Price: '+t.price)}" target="_blank" style="text-decoration:none;">
+    <article class="service-card">
       <img src="${t.img}" alt="${t.name}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'70\' height=\'70\'><rect width=\'70\' height=\'70\' fill=\'%23eee\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' font-size=\'12\' fill=\'%23999\'>No Img</text></svg>'">
-      <div class="rent-info">
+      <div class="service-info">
         <h3>${t.name}</h3>
         <p>{ ${t.desc} }</p>
-        <div class="rent-tags">
-          <span class="rent-price">${t.price}</span>
-          <span class="rent-instant">INSTANT</span>
+        <div class="service-tags">
+          <span class="service-price">${t.price}</span>
+          <span class="service-instant">INSTANT</span>
         </div>
       </div>
     </article>
     </a>`).join("");
 }
 
-function filterRentTools(){
-  const q = document.getElementById("rentSearch").value.toLowerCase().trim();
+function filterServiceTools(){
+  const q = document.getElementById("serviceSearch").value.toLowerCase().trim();
   const filtered = TOOLS.filter(t => 
-    t.cat === "Rent Tool" && 
+    t.cat === currentCategory && 
     (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q))
   );
-  renderRentTools(filtered);
+  renderServiceTools(filtered);
 }
 
 
