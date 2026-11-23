@@ -26,7 +26,7 @@ nav a:hover{color:var(--gold)}
 
 .btn{display:inline-block;padding:12px 19px;border-radius:13px;background:linear-gradient(135deg,#ffca22,#ef9c00);color:#08090d;font-weight:900;border:1px solid #805c13;box-shadow:0 8px 25px #ffb90020;cursor:pointer;font-family:inherit}.btn.alt{background:#11141a;color:white;box-shadow:none}.menu{display:none;background:#151820;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:9px;cursor:pointer}
 
-/* LOGIN BUTTON STYLE (GOLD THEME) */
+/* LOGIN BUTTON STYLE */
 .btn-login { display: flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #ffca22, #ef9c00); color: #08090d; padding: 10px 20px; border-radius: 13px; font-weight: 900; font-size: 15px; border: 1px solid #805c13; box-shadow: 0 8px 25px #ffb90020; cursor: pointer; transition: 0.2s; font-family: inherit; }
 .btn-login:hover { transform: translateY(-2px); box-shadow: 0 10px 30px #ffb90040; color: #08090d; }
 .btn-login svg { width: 18px; height: 18px; }
@@ -73,17 +73,13 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .faq p{margin:0 0 16px;color:var(--muted);font-size:14px}
 
 /* ===== FULL SCREEN SERVICE PAGE CSS ===== */
-#servicePage {
-  display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh;
-  background: #f8f9fa; z-index: 9999; overflow-y: auto; color: #333;
-}
+#servicePage { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #f8f9fa; z-index: 9999; overflow-y: auto; color: #333; }
 .service-header { background: #fff; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 10; }
 .service-header h2 { margin: 0; font-size: 20px; color: #ea580c; display: flex; align-items: center; gap: 10px; }
 .back-btn { background: #f1f5f9; border: none; padding: 8px 15px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 5px; color: #475569; transition: 0.2s; font-size: 14px; }
 .back-btn:hover { background: #e2e8f0; color: #ea580c; }
 .service-search-bar { padding: 10px 15px; border-radius: 8px; border: 1px solid #cbd5e1; font-size: 14px; width: 300px; outline: none; transition: 0.2s; }
 .service-search-bar:focus { border-color: #ea580c; box-shadow: 0 0 0 3px rgba(234,88,12,0.1); }
-
 .service-container { padding: 30px 5%; max-width: 1400px; margin: auto; }
 .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .service-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 15px; display: flex; align-items: center; gap: 15px; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
@@ -96,15 +92,54 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
 .service-price { background: #ffedd5; color: #ea580c; padding: 4px 10px; border-radius: 6px; font-size: 13px; font-weight: 800; border: 1px solid #fed7aa; }
 .service-instant { background: #dcfce7; color: #16a34a; padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 800; display: flex; align-items: center; gap: 4px; border: 1px solid #bbf7d0; }
 .service-instant::before { content: ""; width: 6px; height: 6px; background: #16a34a; border-radius: 50%; display: inline-block; }
-
 .service-loader { display: none; border: 4px solid #f3f3f3; border-top: 4px solid #ea580c; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 50px auto; }
 @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
 .service-no-results { text-align: center; color: #64748b; padding: 30px; grid-column: 1/-1; display: none; font-size: 16px; }
 
-@media(max-width:1024px) { .service-grid { grid-template-columns: repeat(2, 1fr); } }
-@media(max-width:768px) { .service-header { flex-direction: column; gap: 15px; } .service-search-bar { width: 100%; } .service-grid { grid-template-columns: 1fr; } }
+/* ===== LOGIN MODAL CSS ===== */
+.modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.6); z-index: 10000; justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+.modal-overlay.active { display: flex; }
+.login-modal { background: #fff; width: 900px; max-width: 95%; height: 550px; border-radius: 16px; display: flex; overflow: hidden; position: relative; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+.close-modal { position: absolute; top: 15px; right: 15px; background: #fff; border: 1px solid #e5e7eb; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; z-index: 10; color: #6b7280; transition: 0.2s; }
+.close-modal:hover { background: #f3f4f6; color: #ef4444; }
 
-@media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+/* Modal Left Side */
+.login-left { width: 45%; background: #fdf8f5; display: flex; justify-content: center; align-items: center; padding: 30px; border-right: 1px solid #f3f4f6; }
+.login-left img { width: 100%; max-width: 300px; object-fit: contain; }
+
+/* Modal Right Side */
+.login-right { width: 55%; padding: 40px 50px; display: flex; flex-direction: column; justify-content: center; }
+.login-right h2 { margin: 0 0 25px; font-size: 24px; color: #111827; font-weight: 800; }
+.input-group { margin-bottom: 18px; }
+.input-group label { display: block; font-size: 13px; color: #374151; font-weight: 700; margin-bottom: 6px; }
+.input-group input { width: 100%; padding: 12px 15px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px; outline: none; transition: 0.2s; background: #f9fafb; }
+.input-group input:focus { border-color: #ea580c; background: #fff; box-shadow: 0 0 0 3px rgba(234,88,12,0.1); }
+.input-group .password-wrapper { position: relative; }
+.input-group .password-wrapper input { padding-right: 40px; }
+.input-group .eye-icon { position: absolute; right: 12px; top: 50%; transform: translateY(-50%); cursor: pointer; color: #9ca3af; }
+
+.login-options { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; font-size: 13px; }
+.login-options label { display: flex; align-items: center; gap: 6px; color: #374151; cursor: pointer; font-weight: 600; }
+.login-options input[type="checkbox"] { accent-color: #ea580c; width: 16px; height: 16px; cursor: pointer; }
+.login-options a { color: #ea580c; font-weight: 700; text-decoration: none; }
+
+.btn-submit { width: 100%; padding: 14px; background: #f3e8d9; color: #d6c7b3; border: none; border-radius: 8px; font-size: 16px; font-weight: 800; cursor: not-allowed; margin-bottom: 15px; transition: 0.2s; }
+.btn-submit.active { background: #ea580c; color: #fff; cursor: pointer; }
+.btn-submit.active:hover { background: #c2410c; }
+
+.divider { display: flex; align-items: center; text-align: center; color: #9ca3af; font-size: 13px; margin-bottom: 15px; }
+.divider::before, .divider::after { content: ''; flex: 1; border-bottom: 1px solid #e5e7eb; }
+.divider::before { margin-right: 10px; }
+.divider::after { margin-left: 10px; }
+
+.btn-create { width: 100%; padding: 13px; background: #fff; color: #ea580c; border: 1px solid #ea580c; border-radius: 8px; font-size: 15px; font-weight: 800; cursor: pointer; transition: 0.2s; text-align: center; }
+.btn-create:hover { background: #fff7ed; }
+
+@media(max-width:850px){nav{display:none;position:absolute;top:78px;left:0;right:0;padding:18px 5%;background:#0b0d12;flex-direction:column}nav.open{display:flex}.menu{display:block}.nav>.btn{display:none}.stats{grid-template-columns:repeat(2,1fr)}.brands{grid-template-columns:repeat(3,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
+.login-modal { flex-direction: column; height: auto; max-height: 90vh; overflow-y: auto; }
+.login-left { display: none; }
+.login-right { width: 100%; padding: 30px 20px; }
+}
 @media(max-width:560px){.hero{padding:60px 0 40px}.stats,.grid{grid-template-columns:1fr}.band{align-items:flex-start;flex-direction:column}.head h2{font-size:28px}.steps{grid-template-columns:1fr}.tool-card{flex-direction:column;text-align:center}.tool-info h3{justify-content:center}.tool-tags{justify-content:center}}
 </style></head><body>
 
@@ -116,11 +151,8 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
     <span>GSM <b>HK</b><small>UNLOCK · REPAIR · FIX</small></span>
   </a>
   
-  <!-- Navigation with Dropdown -->
   <nav id="nav">
     <a href="#home">Home</a>
-    
-    <!-- DROPDOWN MENU -->
     <div class="dropdown">
       <a href="javascript:void(0)" onclick="toggleDropdown(event)" style="display:flex; align-items:center; gap:5px;">Service List <span style="font-size:10px;">▼</span></a>
       <div class="dropdown-content" id="myDropdown">
@@ -129,13 +161,12 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
         <a onclick="openServicePage('Activation')">🔑 Tools Activation</a>
       </div>
     </div>
-    
     <a href="#tools">Auto Add Fund</a>
     <a href="#contact">DISTRIBUTOR</a>
   </nav>
   
-  <!-- LOGIN BUTTON REPLACED WITH GOLD THEME -->
-  <a href="#" class="btn-login">
+  <!-- LOGIN BUTTON UPDATED WITH ONCLICK -->
+  <a href="javascript:void(0)" class="btn-login" onclick="openLoginModal()">
     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
     Login | Register
   </a>
@@ -212,7 +243,6 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
     <h2 id="servicePageTitle">⚡ Tools Store</h2>
     <input type="text" id="serviceSearch" class="service-search-bar" placeholder="🔍 Search Tools..." onkeyup="filterServiceTools()">
   </div>
-  
   <div class="service-container">
     <div class="service-loader" id="serviceLoader"></div>
     <div class="service-grid" id="serviceGrid"></div>
@@ -220,26 +250,81 @@ footer{border-top:1px solid var(--line);padding:23px 0;color:var(--muted);font-s
   </div>
 </div>
 
+<!-- ===== LOGIN MODAL ===== -->
+<div class="modal-overlay" id="loginModal">
+  <div class="login-modal">
+    <button class="close-modal" onclick="closeLoginModal()">
+      <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    
+    <!-- Left Side Image -->
+    <div class="login-left">
+      <img src="https://cdni.iconscout.com/illustration/premium/thumb/secure-login-4213506-3509673.png" alt="Login Illustration">
+    </div>
+    
+    <!-- Right Side Form -->
+    <div class="login-right">
+      <h2>Log In</h2>
+      
+      <form onsubmit="event.preventDefault(); alert('Login System coming soon!');">
+        <div class="input-group">
+          <label>Email</label>
+          <input type="email" placeholder="Email" required>
+        </div>
+        
+        <div class="input-group">
+          <label>Password</label>
+          <div class="password-wrapper">
+            <input type="password" placeholder="••••••••" required>
+            <span class="eye-icon">
+              <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+            </span>
+          </div>
+        </div>
+        
+        <div class="login-options">
+          <label>
+            <input type="checkbox" checked> Trust this device
+          </label>
+          <a href="javascript:void(0)">Forgot?</a>
+        </div>
+        
+        <button type="submit" class="btn-submit active">Log In</button>
+        
+        <div class="divider">or</div>
+        
+        <a href="javascript:void(0)" class="btn-create">Create Account</a>
+      </form>
+    </div>
+  </div>
+</div>
 
 <script>
 /* ===== TOOLS DATA ===== */
 const TOOLS = [
-  /* --- RENT TOOLS --- */
   {name:"Alien Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 24 hour]", price:"₹142.8", img:"YAHAN_IMAGE_LINK_DALE"},
-  
-  /* YAHAN DIRECT WORKING IMAGE LINK LAGA DIYA HAI */
   {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"₹30.6", img:"https://telegra.ph/file/1b2e1dfa4e19f4d3a7e3c.jpg"},
-  
   {name:"AnonySHU Tool", cat:"Rent Tool", desc:"Instant-Auto API 24x7 [Time: 10 Hour]", price:"₹224.4", img:"YAHAN_IMAGE_LINK_DALE"},
-  
-  /* --- CREDIT TOOLS --- */
   {name:"Phoenix Service Tool Credits", cat:"Credit", desc:"25 Credits for Samsung FRP", price:"₹500", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"TSM Tool Credits", cat:"Credit", desc:"10 Credits for various unlocks", price:"₹300", img:"YAHAN_IMAGE_LINK_DALE"},
-  
-  /* --- ACTIVATION TOOLS --- */
   {name:"UnlockTool Activation", cat:"Activation", desc:"3 Months License Activation", price:"₹2499", img:"YAHAN_IMAGE_LINK_DALE"},
   {name:"ChimeraTool Activation", cat:"Activation", desc:"1 Year License Activation", price:"₹8999", img:"YAHAN_IMAGE_LINK_DALE"}
 ];
+
+/* ===== LOGIN MODAL LOGIC ===== */
+const loginModal = document.getElementById("loginModal");
+function openLoginModal() {
+  loginModal.classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+function closeLoginModal() {
+  loginModal.classList.remove("active");
+  document.body.style.overflow = "auto";
+}
+// Close modal if clicked outside
+loginModal.addEventListener("click", (e) => {
+  if(e.target === loginModal) closeLoginModal();
+});
 
 /* ===== RENDER MAIN PAGE TOOLS ===== */
 const grid=document.getElementById("toolsGrid"),noResults=document.getElementById("noResults");
@@ -268,7 +353,6 @@ function toggleDropdown(event) {
   event.preventDefault();
   document.getElementById("myDropdown").classList.toggle("show");
 }
-
 window.onclick = function(event) {
   if (!event.target.matches('.dropdown a')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
@@ -281,7 +365,7 @@ window.onclick = function(event) {
   }
 }
 
-/* ===== SERVICE PAGE LOGIC (Rent, Credit, Activation) ===== */
+/* ===== SERVICE PAGE LOGIC ===== */
 const servicePage = document.getElementById("servicePage");
 const serviceGrid = document.getElementById("serviceGrid");
 const serviceLoader = document.getElementById("serviceLoader");
@@ -290,16 +374,11 @@ let currentCategory = "";
 
 function openServicePage(category){
   document.getElementById("myDropdown").classList.remove("show");
-
   currentCategory = category;
   servicePage.style.display = "block";
   document.body.style.overflow = "hidden";
   
-  const titleMap = {
-    "Rent Tool": "⚡ Tools Rent Store",
-    "Credit": "💰 Tools Credit Store",
-    "Activation": "🔑 Tools Activation Store"
-  };
+  const titleMap = { "Rent Tool": "⚡ Tools Rent Store", "Credit": "💰 Tools Credit Store", "Activation": "🔑 Tools Activation Store" };
   document.getElementById("servicePageTitle").innerText = titleMap[category] || "⚡ Tools Store";
 
   serviceLoader.style.display = "block";
@@ -344,10 +423,7 @@ function renderServiceTools(list){
 
 function filterServiceTools(){
   const q = document.getElementById("serviceSearch").value.toLowerCase().trim();
-  const filtered = TOOLS.filter(t => 
-    t.cat === currentCategory && 
-    (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q))
-  );
+  const filtered = TOOLS.filter(t => t.cat === currentCategory && (t.name.toLowerCase().includes(q) || t.desc.toLowerCase().includes(q)));
   renderServiceTools(filtered);
 }
 
@@ -362,7 +438,6 @@ function applyFilter(){
   });
   renderTools(filtered);
 }
-
 searchInput.addEventListener("input",applyFilter);
 catFilter.addEventListener("change",applyFilter);
 renderTools(TOOLS);
