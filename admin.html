@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GSM HK | Admin Panel</title>
+<style>
+  body { font-family: system-ui, sans-serif; background: #08090d; color: #fff; margin: 0; padding: 20px; }
+  .container { max-width: 900px; margin: auto; background: #11141a; padding: 20px; border-radius: 12px; border: 1px solid #292d36; }
+  h1 { color: #ffb900; margin-top: 0; }
+  .form-group { display: flex; gap: 10px; margin-bottom: 15px; flex-wrap: wrap; }
+  input, select, button { padding: 10px; border-radius: 8px; border: 1px solid #292d36; background: #1a1e26; color: #fff; }
+  input { flex: 1; min-width: 150px; }
+  button { background: #ffb900; color: #000; font-weight: bold; cursor: pointer; border: none; transition: 0.2s; }
+  button:hover { background: #e6a700; }
+  button.delete { background: #ef4444; color: #fff; padding: 6px 10px; font-size: 12px; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { padding: 12px; text-align: left; border-bottom: 1px solid #292d36; }
+  th { color: #ffb900; }
+  .code-box { background: #000; padding: 15px; border-radius: 8px; margin-top: 20px; overflow-x: auto; position: relative; }
+  pre { margin: 0; color: #15c96b; font-family: monospace; font-size: 14px; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; background: #333; color: #fff; font-size: 12px; padding: 5px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>⚙️ GSM HK Admin Panel</h1>
+  <p style="color:#a5afbf">Yahan se tools add/edit karein. Niche se code copy karke apni website me paste karein.</p>
+  
+  <div class="form-group">
+    <input type="text" id="tName" placeholder="Tool Name (e.g. Chimera)">
+    <select id="tCat">
+      <option value="Rent Tool">Rent Tool</option>
+      <option value="Credit">Tools Credit</option>
+      <option value="Activation">Tools Activation</option>
+      <option value="Unlock Tool">Unlock Tool</option>
+    </select>
+    <input type="text" id="tPrice" placeholder="Price (e.g. ₹500)">
+    <input type="text" id="tDesc" placeholder="Description">
+    <input type="text" id="tImg" placeholder="Image Link">
+    <button onclick="addTool()">+ Add Tool</button>
+  </div>
+
+  <table id="toolTable">
+    <thead>
+      <tr><th>Name</th><th>Category</th><th>Price</th><th>Action</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class="code-box">
+    <button class="copy-btn" onclick="copyCode()">Copy Code</button>
+    <pre id="outputCode">[]</pre>
+  </div>
+</div>
+
+<script>
+  // Default tools (jo aapki website me hain)
+  let tools = [
+    {name:"Android Multi Tool", cat:"Rent Tool", desc:"Auto Username Password [Time: 2 hour]", price:"₹30.6", img:"https://telegra.ph/file/1b2e1dfa4e19f4d3a7e3c.jpg"}
+  ];
+
+  function renderTable() {
+    const tbody = document.querySelector("#toolTable tbody");
+    tbody.innerHTML = tools.map((t, i) => `
+      <tr>
+        <td>${t.name}</td>
+        <td>${t.cat}</td>
+        <td>${t.price}</td>
+        <td><button class="delete" onclick="deleteTool(${i})">Delete</button></td>
+      </tr>
+    `).join("");
+    document.getElementById("outputCode").innerText = JSON.stringify(tools, null, 2);
+  }
+
+  function addTool() {
+    const name = document.getElementById("tName").value;
+    const cat = document.getElementById("tCat").value;
+    const price = document.getElementById("tPrice").value;
+    const desc = document.getElementById("tDesc").value;
+    const img = document.getElementById("tImg").value;
+
+    if(!name || !price) return alert("Name and Price required!");
+
+    tools.push({name, cat, desc, price, img});
+    renderTable();
+    
+    // clear inputs
+    document.getElementById("tName").value = "";
+    document.getElementById("tPrice").value = "";
+    document.getElementById("tDesc").value = "";
+    document.getElementById("tImg").value = "";
+  }
+
+  function deleteTool(index) {
+    tools.splice(index, 1);
+    renderTable();
+  }
+
+  function copyCode() {
+    const code = document.getElementById("outputCode").innerText;
+    navigator.clipboard.writeText("const TOOLS = " + code + ";").then(() => {
+      alert("✅ Code Copied! Ab apni index.html me 'const TOOLS = [...]' ki jagah paste kar dein.");
+    });
+  }
+
+  renderTable();
+</script>
+</body>
+</html>
